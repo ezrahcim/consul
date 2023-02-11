@@ -2,7 +2,6 @@ class Mailer < ApplicationMailer
   after_action :prevent_delivery_to_users_without_email
 
   helper :text_with_links
-  helper :mailer
   helper :users
 
   def comment(comment)
@@ -142,6 +141,15 @@ class Mailer < ApplicationMailer
     @email_to = user.email
 
     mail(to: @email_to, subject: t("mailers.machine_learning_success.subject"))
+  end
+
+  def already_confirmed(user)
+    @email_to = user.email
+    @user = user
+
+    with_user(@user) do
+      mail(to: @email_to, subject: t("mailers.already_confirmed.subject"))
+    end
   end
 
   private

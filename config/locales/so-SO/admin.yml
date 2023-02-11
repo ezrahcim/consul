@@ -4,11 +4,9 @@ so:
       title: Mamul
     actions:
       actions: Tilaabooyin
-      confirm: Mahubtaa adigu?
       confirm_hide: Xaqiijinta dhexdhexaadinta
       delete: "Titiriid"
       hide: Qarin
-      hide_author: Qoore Qarson
       restore: Socelin
       mark_featured: Soobandhigiid/ Muqaal
       unmark_featured: Muqaal an Calamad lahayn
@@ -165,7 +163,6 @@ so:
           incompatible: Aan la isku hallayn karin
           price: Qime
           author: Qoraa
-        cannot_calculate_winners: Miisaaniyaddu waa inay ku sii jirtaa marxaladda "Mashruucyada Codsiga", "Dib u Eegista Codadka" ama "Miisaaniyadda Dhameystiran" si loo xisaabiyo mashaariicda guusha
         see_results: "Arag Natijada"
       show:
         assigned_admin: Mamulaha lamagcaabay
@@ -811,9 +808,6 @@ so:
         no_questions: "Ma jiraan wax su'aalo ah oo loo xilsaaray ra'yiururintan."
         questions_title: "Liiska sualaha"
         table_title: "Ciwaan"
-      flash:
-        question_added: "Su'aasha lagu darey ra'yiururintan"
-        error_on_question_added: "Su'aashu laguma dari karin ra'yiururintan"
     questions:
       index:
         title: "Sualo"
@@ -857,12 +851,6 @@ so:
     answers:
       new:
         title: Jawaab cusub
-      show:
-        title: Ciwaan
-        description: Sharaxaad
-        images: Sawiiro
-        images_list: Liska Sawirada
-        edit: Tafatiir Suasha
       edit:
         title: Tafatiir Suasha
       videos:

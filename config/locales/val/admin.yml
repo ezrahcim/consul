@@ -4,11 +4,9 @@ val:
       title: Administració
     actions:
       actions: Accions
-      confirm: Estàs segur?
       confirm_hide: Confirmar
       delete: "Eliminar"
       hide: Amagar
-      hide_author: Bloquejar a l'autor
       restore: Restaurar
       mark_featured: Destacar
       unmark_featured: Llevar destacat
@@ -118,7 +116,6 @@ val:
       index:
         new_button: "Afegeix nou grup"
     budget_headings:
-      no_headings: "No hi ha partides creades encara. Cada usuari podrà votar en una sola partida de cada grup."
       create:
         notice: "Partida creada correctament!"
       update:
@@ -193,7 +190,6 @@ val:
           incompatible: Incompatible
           price: Cost
           author: Autor
-        cannot_calculate_winners: El pressupost ha d'estar en les fases "Votació final", "Votació finalitzada" o "Resultats" per a poder calcular les propostes guanyadores
         see_results: "Vore resultats"
       show:
         assigned_admin: Administrador assignat
@@ -851,9 +847,6 @@ val:
         no_questions: "No hi ha preguntes asignades a esta votació."
         questions_title: "Listat de preguntes assignades"
         table_title: "Títol"
-      flash:
-        question_added: "Pregunta afegida a esta votació"
-        error_on_question_added: "No es va poder asignar la pregunta"
     questions:
       index:
         title: "Preguntes"
@@ -898,12 +891,6 @@ val:
     answers:
       new:
         title: Nova resposta
-      show:
-        title: Títol
-        description: Descripció
-        images: Imatges
-        images_list: Lista d'imatges
-        edit: Editar resposta
       edit:
         title: Editar resposta
       videos:

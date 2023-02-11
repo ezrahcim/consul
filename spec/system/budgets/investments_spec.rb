@@ -62,7 +62,11 @@ describe "Budget Investments" do
     investments.each do |investment|
       within("#budget-investments") do
         expect(page).to have_content investment.title
-        expect(page).to have_css("a[href='#{budget_investment_path(budget, id: investment.id)}']", text: investment.title)
+        expect(page).to have_content investment.comments_count
+        expect(page).to have_link "No comments", href: budget_investment_path(budget, id: investment.id,
+                                                                                      anchor: "comments")
+        expect(page).to have_link investment.title, href: budget_investment_path(budget, id: investment.id)
+
         expect(page).not_to have_content(unfeasible_investment.title)
       end
     end
@@ -175,6 +179,8 @@ describe "Budget Investments" do
         click_button "Search"
       end
 
+      expect(page).to have_content "containing the term 'Schwifty'"
+
       within("#budget-investments") do
         expect(page).to have_css(".budget-investment", count: 2)
 
@@ -199,9 +205,10 @@ describe "Budget Investments" do
       select "Last 24 hours", from: "By date"
       click_button "Filter"
 
-      expect(page).to have_content "There is 1 investment containing the term 'environment'"
+      expect(page).to have_content "There is 1 investment"
       expect(page).to have_css ".budget-investment", count: 1
       expect(page).to have_content "Feasible environment"
+      expect(page).not_to have_content "containing the term"
       expect(page).not_to have_content "Feasible health"
       expect(page).not_to have_content "Unfeasible environment"
       expect(page).not_to have_content "Unfeasible health"
@@ -209,11 +216,29 @@ describe "Budget Investments" do
       click_link "Unfeasible"
 
       expect(page).not_to have_content "Feasible environment"
-      expect(page).to have_content "There is 1 investment containing the term 'environment'"
+      expect(page).to have_content "There is 1 investment"
       expect(page).to have_css ".budget-investment", count: 1
       expect(page).to have_content "Unfeasible environment"
+      expect(page).not_to have_content "containing the term"
       expect(page).not_to have_content "Feasible health"
       expect(page).not_to have_content "Unfeasible health"
+    end
+
+    scenario "Advanced search without search terms" do
+      create(:budget_heading, group: heading.group)
+      create(:budget_investment, heading: heading, title: "Old thing", created_at: 2.years.ago)
+      create(:budget_investment, heading: heading, title: "Newest thing", created_at: 1.hour.ago)
+
+      visit budget_investments_path(budget, heading: heading)
+
+      click_button "Advanced search"
+      select "Last year", from: "By date"
+      click_button "Filter"
+
+      expect(page).to have_content "There is 1 investment"
+      expect(page).to have_content "Newest thing"
+      expect(page).not_to have_content "Old thing"
+      within("main") { expect(page).not_to have_content "Participatory budgeting" }
     end
   end
 
@@ -579,7 +604,7 @@ describe "Budget Investments" do
       fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
       fill_in "Location additional info", with: "City center"
       fill_in "If you are proposing in the name of a collective/organization, "\
-        "or on behalf of more people, write its name", with: "T.I.A."
+              "or on behalf of more people, write its name", with: "T.I.A."
       fill_in "Tags", with: "Towers"
       check "I agree to the Privacy Policy and the Terms and conditions of use"
 
@@ -596,6 +621,19 @@ describe "Budget Investments" do
 
       expect(page).to have_content "1 Investment"
       expect(page).to have_content "Build a skyscraper"
+    end
+
+    scenario "Create with single heading and hidden money" do
+      budget_hide_money = create(:budget, :hide_money)
+      group = create(:budget_group, budget: budget_hide_money)
+      create(:budget_heading, name: "Heading without money", group: group)
+
+      login_as(author)
+
+      visit new_budget_investment_path(budget_hide_money)
+
+      expect(page).to have_content "Heading without money"
+      expect(page).not_to have_content "€"
     end
 
     scenario "Create with single group and multiple headings" do
@@ -631,7 +669,7 @@ describe "Budget Investments" do
       fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
       fill_in "Location additional info", with: "City center"
       fill_in "If you are proposing in the name of a collective/organization, "\
-        "or on behalf of more people, write its name", with: "T.I.A."
+              "or on behalf of more people, write its name", with: "T.I.A."
       fill_in "Tags", with: "Towers"
       check "I agree to the Privacy Policy and the Terms and conditions of use"
 
@@ -664,7 +702,7 @@ describe "Budget Investments" do
 
       click_button "Update Investment"
 
-      expect(page).to have_content "Investment project updated succesfully"
+      expect(page).to have_content "Investment project updated successfully"
       expect(page).to have_content "Park improvements"
     end
 
@@ -815,6 +853,7 @@ describe "Budget Investments" do
     expect(page).to have_content(investment.title)
     expect(page).to have_content(investment.description)
     expect(page).to have_content(investment.author.name)
+    expect(page).to have_content(investment.comments_count)
     expect(page).to have_content(investment.heading.name)
     within("#investment_code") do
       expect(page).to have_content(investment.id)
@@ -1091,7 +1130,7 @@ describe "Budget Investments" do
                   "new_budget_investment_path",
                   "",
                   "budget_investment_path",
-                  { budget_id: "budget_id" }
+                  mappable_path_arguments: { budget_id: "budget_id" }
 
   context "Destroy" do
     scenario "Admin cannot destroy budget investments", :admin do
@@ -1118,7 +1157,7 @@ describe "Budget Investments" do
         accept_confirm { click_link("Delete") }
       end
 
-      expect(page).to have_content "Investment project deleted succesfully"
+      expect(page).to have_content "Investment project deleted successfully"
 
       visit user_path(user, tab: :budget_investments)
 
@@ -1374,6 +1413,22 @@ describe "Budget Investments" do
       click_link investment.title
 
       expect(page).to have_content "€10,000"
+    end
+
+    scenario "Show message if user already voted in other heading" do
+      group = create(:budget_group, budget: budget, name: "Global Group")
+      heading = create(:budget_heading, group: group, name: "Heading 1")
+      investment = create(:budget_investment, :selected, heading: heading)
+      heading2 = create(:budget_heading, group: group, name: "Heading 2")
+      investment2 = create(:budget_investment, :selected, heading: heading2)
+      user = create(:user, :level_two, ballot_lines: [investment])
+
+      login_as(user)
+      visit budget_investment_path(budget, investment2)
+
+      expect(page).to have_selector(".participation-not-allowed",
+                                    text: "You have already voted a different heading: Heading 1",
+                                    visible: :hidden)
     end
 
     scenario "Sidebar in show should display vote text" do

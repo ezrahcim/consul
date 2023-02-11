@@ -2,15 +2,15 @@
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to create the application database on another
-# system, you should be using db:schema:load, not running all the migrations
-# from scratch. The latter is a flawed and unsustainable approach (the more migrations
-# you'll amass, the slower it'll run and the greater likelihood for issues).
+# This file is the source Rails uses to define your schema when running `rails
+# db:schema:load`. When creating a new database, `rails db:schema:load` tends to
+# be faster and is potentially less error prone than running all of your
+# migrations from scratch. Old migrations may fail to apply correctly if those
+# migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_03_112944) do
+ActiveRecord::Schema.define(version: 2022_12_03_140136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -394,6 +394,7 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.text "description_informing"
     t.string "voting_style", default: "knapsack"
     t.boolean "published"
+    t.boolean "hide_money", default: false
   end
 
   create_table "campaigns", id: :serial, force: :cascade do |t|
@@ -447,6 +448,7 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.string "ancestry"
     t.integer "confidence_score", default: 0, null: false
     t.boolean "valuation", default: false
+    t.tsvector "tsv"
     t.index ["ancestry"], name: "index_comments_on_ancestry"
     t.index ["cached_votes_down"], name: "index_comments_on_cached_votes_down"
     t.index ["cached_votes_total"], name: "index_comments_on_cached_votes_total"
@@ -454,6 +456,7 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.index ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type"
     t.index ["confidence_score"], name: "index_comments_on_confidence_score"
     t.index ["hidden_at"], name: "index_comments_on_hidden_at"
+    t.index ["tsv"], name: "index_comments_on_tsv", using: :gin
     t.index ["user_id"], name: "index_comments_on_user_id"
     t.index ["valuation"], name: "index_comments_on_valuation"
   end
@@ -558,6 +561,7 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.string "queue"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string "tenant"
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
@@ -1207,7 +1211,6 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.integer "user_id"
     t.string "origin"
     t.integer "officer_id"
-    t.string "token"
     t.index ["booth_assignment_id"], name: "index_poll_voters_on_booth_assignment_id"
     t.index ["document_number"], name: "index_poll_voters_on_document_number"
     t.index ["officer_assignment_id"], name: "index_poll_voters_on_officer_assignment_id"
@@ -1267,6 +1270,8 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.datetime "hidden_at"
     t.datetime "ignored_at"
     t.datetime "confirmed_hide_at"
+    t.tsvector "tsv"
+    t.index ["tsv"], name: "index_proposal_notifications_on_tsv", using: :gin
   end
 
   create_table "proposal_translations", id: :serial, force: :cascade do |t|
@@ -1551,6 +1556,17 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.index ["proposals_count"], name: "index_tags_on_proposals_count"
   end
 
+  create_table "tenants", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.string "schema"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "schema_type", default: 0, null: false
+    t.datetime "hidden_at"
+    t.index ["name"], name: "index_tenants_on_name", unique: true
+    t.index ["schema"], name: "index_tenants_on_schema", unique: true
+  end
+
   create_table "topics", id: :serial, force: :cascade do |t|
     t.string "title", null: false
     t.text "description"
@@ -1692,6 +1708,15 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.datetime "started_at"
     t.index ["started_at"], name: "index_visits_on_started_at"
     t.index ["user_id"], name: "index_visits_on_user_id"
+  end
+
+  create_table "votation_types", force: :cascade do |t|
+    t.integer "questionable_id"
+    t.string "questionable_type"
+    t.integer "vote_type"
+    t.integer "max_votes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "votes", id: :serial, force: :cascade do |t|

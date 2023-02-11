@@ -4,11 +4,9 @@ uk-UA:
       title: Адміністрування
     actions:
       actions: Дії
-      confirm: Ви впевнені?
       confirm_hide: Підтвердити модерацію
       delete: "Видалити"
       hide: Приховати
-      hide_author: Приховати автора
       restore: Відновити
       mark_featured: Рекомендовані
       unmark_featured: Не показувати рекомендовані
@@ -135,7 +133,6 @@ uk-UA:
         max_votable_headings_info: "Стосується лише етапу відбору проєктів. На етапі голосування за проєкти користувачі можуть проголосувати лише за одну рубрику в групі."
         submit: "Зберегти групу"
     budget_headings:
-      no_headings: "Рубрики відсутні."
       create:
         notice: "Рубрику створено!"
       update:
@@ -213,7 +210,6 @@ uk-UA:
           incompatible: Несумісно
           price: Вартість
           author: Автор
-        cannot_calculate_winners: Щоб визначити переможні інвестиційні проєкти, бюджет має знаходитись на етапах "Голосування за проєкти" або "Виконаний бюджет"
         see_results: "Переглянути результати"
         milestone_tags_filter_all: "Теги всіх етапів"
       show:
@@ -1006,9 +1002,6 @@ uk-UA:
         table_title: "Назва"
         edit_answers: Редагувати відповіді
         see_proposal: "(Переглянути пропозицію)"
-      flash:
-        question_added: "Запитання додано до голосування"
-        error_on_question_added: "Не вдалося призначити запитання для цього опитування"
       destroy:
         alert: "Ця дія видалить голосування і всі пов'язані запитання."
         success_notice: "Голосування видалено"
@@ -1058,12 +1051,6 @@ uk-UA:
     answers:
       new:
         title: Нова відповідь
-      show:
-        title: Назва
-        description: Опис
-        images: Зображення
-        images_list: Список зображень
-        edit: Додати відповідь
       edit:
         title: Редагувати відповідь
       videos:

@@ -65,7 +65,7 @@ describe "Admin collaborative legislation", :admin do
 
       base_date = Date.current
 
-      within_fieldset text: "Draft phase" do
+      within "fieldset", text: "Draft phase" do
         check "Enabled"
         fill_in "Start", with: base_date - 3.days
         fill_in "End", with: base_date - 1.day
@@ -134,7 +134,7 @@ describe "Admin collaborative legislation", :admin do
 
       base_date = Date.current - 2.days
 
-      within_fieldset text: "Draft phase" do
+      within "fieldset", text: "Draft phase" do
         check "Enabled"
         fill_in "Start", with: base_date
         fill_in "End", with: base_date + 3.days
@@ -175,7 +175,7 @@ describe "Admin collaborative legislation", :admin do
         fill_in "End", with: base_date + 5.days
       end
 
-      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.jpg"))
+      imageable_attach_new_file(file_fixture("clippy.jpg"))
 
       click_button "Create process"
 

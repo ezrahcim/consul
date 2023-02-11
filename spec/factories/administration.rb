@@ -58,7 +58,7 @@ FactoryBot.define do
   end
 
   factory :site_customization_image, class: "SiteCustomization::Image" do
-    image { File.new("spec/fixtures/files/logo_header.png") }
+    image { Rack::Test::UploadedFile.new("spec/fixtures/files/logo_header.png") }
     name { "logo_header" }
   end
 
@@ -97,5 +97,14 @@ FactoryBot.define do
     key { "debates.index.section_footer.description" }
     value_es { "Texto en español" }
     value_en { "Text in english" }
+  end
+
+  factory :tenant do
+    sequence(:name) { |n| "Tenant #{n}" }
+    sequence(:schema) { |n| "subdomain#{n}" }
+
+    trait :domain do
+      schema_type { :domain }
+    end
   end
 end

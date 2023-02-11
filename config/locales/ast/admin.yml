@@ -4,10 +4,8 @@ ast:
       title: Alministración
     actions:
       actions: Acciones
-      confirm: '¿Tas seguru?'
       delete: "Borrar"
       hide: Despintar
-      hide_author: Bloquiar a l'autor
       restore: Volver amosar
       mark_featured: Destacadas
       unmark_featured: Quitar destacáu
@@ -587,9 +585,6 @@ ast:
         no_questions: "Nun hai entrugues asignaes a esta votación."
         questions_title: "Llistáu d'entrugues asignaes"
         table_title: "Títulu"
-      flash:
-        question_added: "Entruga añedida a esta votación"
-        error_on_question_added: "Non pudo asignase la entruga"
     questions:
       index:
         title: "Entruges"
@@ -621,10 +616,6 @@ ast:
           document_title: Títulu
           document_actions: Acciones
     answers:
-      show:
-        title: Títulu
-        description: Descripción detallada
-        images: Imaxes
       videos:
         index:
           video_title: Títulu

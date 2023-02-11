@@ -6,13 +6,8 @@ en-GB:
       save_changes_submit: Зберегти зміни
       recommendations: Рекомендації
       title: Мій обліковий запис
-      user_permission_debates: Взяти участь в обговоренні
       user_permission_info: З вашим обліковим записом ви маєте можливість...
-      user_permission_proposal: Подати нові пропозиції
-      user_permission_support_proposal: Підтримати пропозиції
       user_permission_title: Участь
-      user_permission_verify_info: "* Лише для користувачів Census."
-      user_permission_votes: Взяти участь у підсумковому голосуванні
       verify_my_account: Підтвердити мій обліковий запис
   application:
     menu: Меню
@@ -41,10 +36,6 @@ en-GB:
       form:
         submit_button: Розпочати обговорення
     debate:
-      comments:
-        zero: Коментарів немає
-        one: 1 коментар
-        other: "%{count} коментарів"
       votes:
         zero: Голоси відсутні
         one: 1 голос
@@ -68,9 +59,6 @@ en-GB:
       search_form:
         button: Пошук
         title: Пошук
-      search_results:
-        one: " що містить термін <strong>'%{search_term}'</strong>"
-        other: " що містить термін <strong>'%{search_term}'</strong>"
       start_debate: Розпочати обговорення
       title: Обговорення
       section_header:
@@ -85,10 +73,6 @@ en-GB:
       start_new: Розпочати обговорення
     show:
       author_deleted: Користувача видалено
-      comments:
-        zero: Коментарі відсутні
-        one: 1 коментар
-        other: "%{count} коментарів"
       comments_title: Коментарі
       edit_debate_link: Редагувати
       share: Поділитися
@@ -212,10 +196,6 @@ en-GB:
         submit_button: Подати пропозицію
       recommendation_three: Отримуйте задоволення від користування цим простором та голосами, які його наповнюють. Все це належить в тому числі вам.
     proposal:
-      comments:
-        zero: Коментарі відсутні
-        one: 1 коментар
-        other: "%{count} коментарів"
       support: Підтримка
       support_title: Підтримати цю пропозицію
       supports:
@@ -228,10 +208,6 @@ en-GB:
         other: "%{count} голосів"
     show:
       author_deleted: Користувача видалено
-      comments:
-        zero: Коментарі відсутні
-        one: 1 коментар
-        other: "%{count} коментарів"
       comments_tab: Коментарі
       notifications_tab: Сповіщення
       milestones_tab: Віхи
@@ -386,9 +362,6 @@ en-GB:
   votes:
     organizations: Організації не допускаються до голосування
     supports: Підтримки
-    budget_investments:
-      not_logged_in: Щоб продовжити, необхідно %{signin} або %{signup}.
-      organization: Організації не допускаються до голосування
   welcome:
     feed:
       most_active:
@@ -398,13 +371,8 @@ en-GB:
       title: Рекомендовані
     welcome:
       title: Взяти участь
-      user_permission_debates: Взяти участь в обговоренні
       user_permission_info: З вашим обліковим записом можна...
-      user_permission_proposal: Подати нові пропозиції
-      user_permission_support_proposal: Підтримати пропозиції*
-      user_permission_verify_info: "* Лише для користувачів Цензусу."
       user_permission_verify_my_account: Підтвердити мій обліковий запис
-      user_permission_votes: Взяти участь у підсумковому голосуванні
   related_content:
     title: "Пов'язаний вміст"
     submit: "Додати"

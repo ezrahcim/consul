@@ -255,12 +255,10 @@ describe "Emails" do
       expect(email).to have_body_text(direct_message.body)
       expect(email).to have_body_text(direct_message.receiver.name)
     end
-
-    pending "In the copy sent to the sender, display the receiver's name"
   end
 
   context "Proposal notification digest" do
-    scenario "notifications for proposals that I'm following" do
+    scenario "notifications for proposals that I'm following", :no_js do
       Setting["org_name"] = "CONSUL"
       user = create(:user, email_digest: true)
 
@@ -306,6 +304,7 @@ describe "Emails" do
       notification2.reload
       expect(notification1.emailed_at).to be
       expect(notification2.emailed_at).to be
+      expect(email_digest.notifications).to be_empty
     end
 
     scenario "notifications moderated are not sent" do
@@ -322,8 +321,6 @@ describe "Emails" do
 
       expect { open_last_email }.to raise_error "No email has been sent!"
     end
-
-    xscenario "Delete all Notifications included in the digest after email sent"
   end
 
   context "User invites" do
@@ -500,7 +497,7 @@ describe "Emails" do
       expect(email).to have_body_text("To unsubscribe from these emails, visit")
       expect(email).to have_body_text(
                         edit_subscriptions_path(token: user_with_newsletter_in_segment_2.subscriptions_token))
-      expect(email).to have_body_text('and uncheck "Receive by email website relevant information"')
+      expect(email).to have_body_text('and uncheck "Receive relevant information by email"')
     end
   end
 

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   include Verification
+  attribute :registering_from_web, default: false
 
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
          :trackable, :validatable, :omniauthable, :password_expirable, :secure_validatable,
@@ -130,7 +131,8 @@ class User < ApplicationRecord
   # Get the existing user by email if the provider gives us a verified email.
   def self.first_or_initialize_for_oauth(auth)
     oauth_email           = auth.info.email
-    oauth_email_confirmed = oauth_email.present? && (auth.info.verified || auth.info.verified_email)
+    oauth_verified        = auth.info.verified || auth.info.verified_email || auth.info.email_verified
+    oauth_email_confirmed = oauth_email.present? && oauth_verified
     oauth_user            = User.find_by(email: oauth_email) if oauth_email_confirmed
 
     oauth_user || User.new(
@@ -147,28 +149,13 @@ class User < ApplicationRecord
     organization? ? organization.name : username
   end
 
-  def debate_votes(debates)
-    voted = votes.for_debates(Array(debates).map(&:id))
-    voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
-  end
-
-  def proposal_votes(proposals)
-    voted = votes.for_proposals(Array(proposals).map(&:id))
-    voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
-  end
-
-  def legislation_proposal_votes(proposals)
-    voted = votes.for_legislation_proposals(proposals)
-    voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
-  end
-
   def comment_flags(comments)
     comment_flags = flags.for_comments(comments)
     comment_flags.each_with_object({}) { |f, h| h[f.flaggable_id] = true }
   end
 
   def voted_in_group?(group)
-    votes.for_budget_investments(Budget::Investment.where(group: group)).exists?
+    votes.where(votable: Budget::Investment.where(group: group)).exists?
   end
 
   def headings_voted_within_group(group)
@@ -176,7 +163,7 @@ class User < ApplicationRecord
   end
 
   def voted_investments
-    Budget::Investment.where(id: votes.for_budget_investments.pluck(:votable_id))
+    Budget::Investment.where(id: votes.where(votable: Budget::Investment.all).pluck(:votable_id))
   end
 
   def administrator?
@@ -245,6 +232,7 @@ class User < ApplicationRecord
     Proposal.hide_all proposal_ids
     Budget::Investment.hide_all budget_investment_ids
     ProposalNotification.hide_all ProposalNotification.where(author_id: id).ids
+    remove_roles
   end
 
   def full_restore
@@ -278,10 +266,19 @@ class User < ApplicationRecord
       unconfirmed_phone: nil
     )
     identities.destroy_all
+    remove_roles
   end
 
   def erased?
     erased_at.present?
+  end
+
+  def remove_roles
+    administrator&.destroy!
+    valuator&.destroy!
+    moderator&.destroy!
+    manager&.destroy!
+    sdg_manager&.destroy!
   end
 
   def take_votes_if_erased_document(document_number, document_type)
@@ -338,11 +335,11 @@ class User < ApplicationRecord
   end
 
   def email_required?
-    !erased? && unverified?
+    !erased? && (unverified? || registering_from_web)
   end
 
   def locale
-    self[:locale] ||= I18n.default_locale.to_s
+    self[:locale] || I18n.default_locale.to_s
   end
 
   def confirmation_required?
@@ -383,15 +380,15 @@ class User < ApplicationRecord
   delegate :can?, :cannot?, to: :ability
 
   def public_proposals
-    public_activity? ? proposals : User.none
+    public_activity? ? proposals : proposals.none
   end
 
   def public_debates
-    public_activity? ? debates : User.none
+    public_activity? ? debates : debates.none
   end
 
   def public_comments
-    public_activity? ? comments : User.none
+    public_activity? ? comments : comments.none
   end
 
   # overwritting of Devise method to allow login using email OR username

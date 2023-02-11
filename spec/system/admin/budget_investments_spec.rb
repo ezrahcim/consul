@@ -30,6 +30,19 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content(budget_investment.total_votes)
     end
 
+    scenario "Do not show price column on budgets with hide money" do
+      budget_hide_money = create(:budget, :hide_money)
+      budget_investment = create(:budget_investment, budget: budget_hide_money)
+
+      visit admin_budget_budget_investments_path(budget_hide_money)
+
+      expect(page).to have_content(budget_investment.title)
+      expect(page).to have_content(budget_investment.heading.name)
+      expect(page).to have_content(budget_investment.id)
+      expect(page).not_to have_content("Price")
+      expect(page).not_to have_content("€")
+    end
+
     scenario "If budget is finished do not show 'Selected' button" do
       finished_budget = create(:budget, :finished)
       budget_investment = create(:budget_investment, budget: finished_budget, cached_votes_up: 77)
@@ -1056,7 +1069,7 @@ describe "Admin budget investments", :admin do
       select "Marta desc (marta@admins.org)", from: "budget_investment[administrator_id]"
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
       expect(page).to have_content "Assigned administrator: Marta"
     end
 
@@ -1089,7 +1102,7 @@ describe "Admin budget investments", :admin do
 
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
 
       within("#assigned_valuators") do
         expect(page).to have_content("Valentina (v1@valuators.org)")
@@ -1114,7 +1127,7 @@ describe "Admin budget investments", :admin do
 
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
 
       within("#assigned_valuator_groups") do
         expect(page).to have_content("Health")
@@ -1138,7 +1151,7 @@ describe "Admin budget investments", :admin do
 
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
 
       within("#assigned_valuator_groups") { expect(page).to have_content("Health") }
       within("#assigned_valuators") do
@@ -1160,7 +1173,7 @@ describe "Admin budget investments", :admin do
 
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
 
       within "#tags" do
         expect(page).to have_content "Education"
@@ -1177,7 +1190,7 @@ describe "Admin budget investments", :admin do
       fill_in "budget_investment_valuation_tag_list", with: "Refugees, Solidarity"
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
 
       within "#tags" do
         expect(page).to have_content "Refugees"
@@ -1203,7 +1216,7 @@ describe "Admin budget investments", :admin do
       fill_in "budget_investment_valuation_tag_list", with: "Education, Environment"
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully"
+      expect(page).to have_content "Investment project updated successfully"
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
 
@@ -1231,7 +1244,7 @@ describe "Admin budget investments", :admin do
       fill_in "budget_investment_valuation_tag_list", with: "Refugees, Solidarity"
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
 
       visit budget_investment_path(budget_investment.budget, budget_investment)
       expect(page).to have_content "Park"
@@ -1251,19 +1264,17 @@ describe "Admin budget investments", :admin do
       expect(find("#js-investment-report-alert")).to be_checked
     end
 
-    # The feature tested in this scenario works as expected but some underlying reason
-    # we're not aware of makes it fail at random
-    xscenario "Shows alert with unfeasible status when 'Valuation finished' is checked" do
+    scenario "Shows alert with unfeasible status when 'Valuation finished' is checked" do
       budget_investment = create(:budget_investment, :unfeasible)
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
       click_link "Edit dossier"
 
-      expect(page).to have_content("Valuation finished")
-      valuation = find_field("budget_investment[valuation_finished]")
+      expect(page).to have_field "Valuation finished", checked: false
+
       accept_confirm { check("Valuation finished") }
 
-      expect(valuation).to be_checked
+      expect(page).to have_field "Valuation finished", checked: true
     end
 
     scenario "Undoes check in 'Valuation finished' if user clicks 'cancel' on alert" do
@@ -1303,7 +1314,7 @@ describe "Admin budget investments", :admin do
 
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
       expect(page).to have_content("Milestone Tags: tag1, tag2")
     end
   end
@@ -1556,6 +1567,7 @@ describe "Admin budget investments", :admin do
     end
 
     scenario "Shows the correct investments to valuators" do
+      budget.update!(phase: :valuating)
       investment1.update!(visible_to_valuators: true)
       investment2.update!(visible_to_valuators: false)
 
@@ -1698,7 +1710,7 @@ describe "Admin budget investments", :admin do
 
       header = page.response_headers["Content-Disposition"]
       expect(header).to match(/^attachment/)
-      expect(header).to match(/filename="budget_investments.csv"$/)
+      expect(header).to match(/filename="budget_investments.csv"/)
 
       csv_contents = "ID,Title,Supports,Administrator,Valuator,Valuation Group,Scope of operation,"\
                      "Feasibility,Val. Fin.,Selected,Show to valuators,Author username\n"\

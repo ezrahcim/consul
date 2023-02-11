@@ -1,7 +1,7 @@
 en:
   account:
     show:
-      change_credentials_link: Change my credentials
+      change_credentials_link: Change my login details
       erase_account_link: Erase my account
       finish_verification: Complete verification
       notifications: Notifications
@@ -11,14 +11,9 @@ en:
       save_changes_submit: Save changes
       recommendations: Recommendations
       title: My account
-      user_permission_debates: Participate on debates
       user_permission_info: With your account you can...
-      user_permission_proposal: Create new proposals
-      user_permission_support_proposal: Support proposals
       user_permission_title: Participation
       user_permission_verify: To perform all the actions verify your account.
-      user_permission_verify_info: "* Only for users on Census."
-      user_permission_votes: Participate on final voting
       verified_account: Account verified
       verify_my_account: Verify my account
   application:
@@ -74,10 +69,6 @@ en:
       form:
         submit_button: Start a debate
     debate:
-      comments:
-        one: 1 comment
-        other: "%{count} comments"
-        zero: No comments
       votes:
         one: 1 vote
         other: "%{count} votes"
@@ -102,7 +93,7 @@ en:
       recommendations:
         without_results: There are no debates related to your interests
         without_interests: Follow proposals so we can give you recommendations
-        disable: "Debates recommendations will stop showing if you dismiss them. You can enable them again in 'My account' page"
+        disable: "Recommendations for debates will stop showing if you dismiss them. You can enable them again in 'My account' page"
         actions:
           success: "Recommendations for debates are now disabled for this account"
           error: "An error has occured. Please go to 'My account' page to manually disable recommendations for debates"
@@ -110,17 +101,14 @@ en:
         button: Search
         placeholder: Search debates...
         title: Search
-      search_results:
-        one: " containing the term <strong>'%{search_term}'</strong>"
-        other: " containing the term <strong>'%{search_term}'</strong>"
       start_debate: Start a debate
       title: Debates
       section_header:
         icon_alt: Debates icon
         title: Debates
-        help: Help about debates
+        help: Help with debates
       section_footer:
-        title: Help about debates
+        title: Help with debates
         description: Start a debate to share opinions with others about the topics you are concerned about.
         help_text_1: "The space for citizen debates is aimed at anyone who can expose issues of their concern and those who want to share opinions with other people."
         help_text_2: 'To open a debate you need to sign up on %{org}. Users can also comment on open debates and rate them with the "I agree" or "I disagree" buttons found in each of them.'
@@ -136,10 +124,6 @@ en:
       start_new: Start a debate
     show:
       author_deleted: User deleted
-      comments:
-        one: 1 comment
-        other: "%{count} comments"
-        zero: No comments
       comments_title: Comments
       edit_debate_link: Edit
       flag: This debate has been flagged as inappropriate by several users.
@@ -150,8 +134,13 @@ en:
         submit_button: Save changes
   errors:
     messages:
+      allowed_file_content_types: "content type must be one of %{types}"
       user_not_found: User not found
       invalid_date_range: "Invalid date range"
+      past_date: "Must not be a past date"
+      cannot_change_date:
+        poll_started: "Cannot be changed if voting has already started"
+        poll_ended: "Cannot be changed if voting has already ended"
   form:
     accept_terms: I agree to the %{policy} and the %{conditions}
     accept_terms_title: I agree to the Privacy Policy and the Terms and conditions of use
@@ -197,7 +186,7 @@ en:
       proposal_header:
         published: Published
         draft: Draft
-        retired: Retired
+        retired: Withdrawn
       proposal_totals:
         active_resources: Active resources
         community: Participants in your community
@@ -314,11 +303,11 @@ en:
         submit_button: Save changes
       show_link: View proposal
     retire_form:
-      title: Retire proposal
-      warning: "If you retire the proposal it would still accept supports, but will be removed from the main list and a message will be visible to all users stating that the author considers the proposal should not be supported anymore"
+      title: Withdraw proposal
+      warning: "If you withdraw the proposal it will still accept supports, but will be removed from the main list and a message will be visible to all users stating that the author considers the proposal should not be supported anymore"
       retired_reason_blank: Choose an option
       retired_explanation_placeholder: Explain shortly why you think this proposal should not receive more supports
-      submit_button: Retire proposal
+      submit_button: Withdraw proposal
     retire_options:
       duplicated: Duplicated
       started: Already underway
@@ -349,12 +338,12 @@ en:
       recommendations:
         without_results: There are not proposals related to your interests
         without_interests: Follow proposals so we can give you recommendations
-        disable: "Proposals recommendations will stop showing if you dismiss them. You can enable them again in 'My account' page"
+        disable: "Recommendations for proposals will stop showing if you dismiss them. You can enable them again in 'My account' page"
         actions:
           success: "Recommendations for proposals are now disabled for this account"
           error: "An error has occured. Please go to 'My account' page to manually disable recommendations for proposals"
-      retired_proposals: Retired proposals
-      retired_proposals_link: "Proposals retired by the author"
+      retired_proposals: Withdrawn proposals
+      retired_proposals_link: "Proposals withdrawn by the author"
       selected_proposals: Selected proposals
       selected_proposals_link: View selected proposals
       archived_proposals: Archived proposals
@@ -376,14 +365,13 @@ en:
       select_order_long: "You are viewing proposals according to:"
       start_proposal: Create a proposal
       title: Proposals
-      top: Top weekly
       top_link_proposals: The most supported proposals by category
       section_header:
         icon_alt: Proposals icon
         title: Proposals
-        help: Help about proposals
+        help: Help with proposals
       section_footer:
-        title: Help about proposals
+        title: Help with proposals
         description: Citizens' proposals are an opportunity for neighbours and collectives to decide directly how they want their city to be, after getting sufficient support and submitting to a citizens' vote.
     new:
       form:
@@ -395,7 +383,7 @@ en:
       recommendations_title: Recommendations for creating a proposal
       start_new: Create new proposal
     notice:
-      retired: Proposal retired
+      retired: The proposal has been withdrawn
       published: The proposal has been published
     proposal:
       created: "You've created a proposal!"
@@ -404,11 +392,8 @@ en:
         edit: "Before it gets shared you'll be able to change the text as you like."
         view_proposal: Not now, go to my proposal
       already_supported: You have already supported this proposal. Share it!
-      comments:
-        one: 1 comment
-        other: "%{count} comments"
-        zero: No comments
       support: Support
+      support_label: "Support %{proposal}"
       support_title: Support this proposal
       supports:
         one: 1 support
@@ -427,10 +412,6 @@ en:
     show:
       author_deleted: User deleted
       code: "Proposal code:"
-      comments:
-        one: 1 comment
-        other: "%{count} comments"
-        zero: No comments
       comments_tab: Comments
       dashboard_proposal_link: Dashboard
       flag: This proposal has been flagged as inappropriate by several users.
@@ -438,7 +419,7 @@ en:
       milestones_tab: Milestones
       retired_warning: "The author considers this proposal should not receive more supports."
       retired_warning_link_to_explanation: Read the explanation before voting for it.
-      retired: Proposal retired by the author
+      retired: Proposal withdrawn by the author
       share: Share
       no_notifications: "This proposal has no notifications."
       embed_video_title: "Video on %{proposal}"
@@ -478,7 +459,7 @@ en:
       title: Edition
       edit_proposal_link: Edit proposal
       publish: Publish proposal
-      retire: Retire proposal
+      retire: Withdraw proposal
     new_request:
       links: Links
     resources:
@@ -612,9 +593,9 @@ en:
       section_header:
         icon_alt: Voting icon
         title: Voting
-        help: Help about voting
+        help: Help with voting
       section_footer:
-        title: Help about voting
+        title: Help with voting
         description: Citizens' polls are a participatory mechanism by which citizens with voting rights can make direct decisions
       no_polls: "There are no open votings."
     show:
@@ -655,6 +636,10 @@ en:
     show:
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
+    description:
+      unique: "You can select a maximum of 1 answer."
+      multiple: "You can select a maximum of %{maximum} answers."
+    read_more_about: "Read more about:"
   proposal_notifications:
     new:
       title: "Send notification"
@@ -770,6 +755,10 @@ en:
         other: "%{count} languages in use"
     optional: "Optional fields"
     required: "Required fields"
+    comments:
+      one: "1 comment"
+      other: "%{count} comments"
+      zero: "No comments"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -839,24 +828,23 @@ en:
       send_private_message: "Send private message"
       delete_alert: "Are you sure you want to delete your investment project? This action can't be undone"
     proposals:
-      retired: "Retired proposal"
+      retired: "Withdrawn proposal"
       draft: Draft
       published: Published
       see: "See proposal"
       actions: Actions
-      retired_help_text: Dashboard not available for retired proposals
+      retired_help_text: Dashboard not available for withdrawn proposals
   votes:
     agree: I agree
+    agree_label: "I agree with %{title}"
     anonymous: Too many anonymous votes to admit vote %{verify_account}.
-    comment_unauthenticated: You must %{signin} or %{signup} to vote.
     disagree: I disagree
+    disagree_label: "I don't agree with %{title}"
     organizations: Organizations are not permitted to vote
     supports: Supports
     verified_only: Only verified users can vote on proposals; %{verify_account}.
     budget_investments:
-      not_logged_in: You must %{signin} or %{signup} to continue.
       not_verified: Only verified users can vote on investment projects; %{verify_account}.
-      organization: Organizations are not permitted to vote
       unfeasible: Unfeasible investment projects can not be supported
       not_voting_allowed: Voting phase is closed
       different_heading_assigned:
@@ -896,14 +884,9 @@ en:
       go_to_index: Not now, go to index page
       start_using_consul: Go to index page
       title: Participate
-      user_permission_debates: Participate on debates
       user_permission_info: With your account you can...
-      user_permission_proposal: Create new proposals
-      user_permission_support_proposal: Support proposals*
       user_permission_verify: "To perform the following actions verify your account."
-      user_permission_verify_info: "* Only for users on Census."
       user_permission_verify_my_account: Verify my account
-      user_permission_votes: Participate on final voting
   invisible_captcha:
     sentence_for_humans: "If you are human, ignore this field"
     timestamp_error_message: "Sorry, that was too quick! Please resubmit."

@@ -38,7 +38,9 @@ describe "Moderate users" do
 
     expect(page).not_to have_content(comment3.body)
 
-    click_link("Sign out")
+    click_link "Sign out"
+
+    expect(page).to have_content "You have been signed out successfully"
 
     visit root_path
 
@@ -93,5 +95,27 @@ describe "Moderate users" do
     within("#moderation_users") do
       expect(page).to have_content "Hidden"
     end
+  end
+
+  scenario "Block a user removes all their roles" do
+    admin = create(:administrator).user
+    user = create(:user, username: "Budget administrator")
+    budget = create(:budget, administrators: [create(:administrator, user: user)])
+    debate = create(:debate, author: user)
+    login_as(admin)
+    visit admin_budget_budget_investments_path(budget)
+
+    expect(page).to have_select options: ["All administrators", "Budget administrator"]
+
+    visit debate_path(debate)
+    within("#debate_#{debate.id}") do
+      accept_confirm { click_button "Block author" }
+    end
+
+    expect(page).to have_current_path(debates_path)
+
+    visit admin_budget_budget_investments_path(budget)
+
+    expect(page).to have_select options: ["All administrators"]
   end
 end

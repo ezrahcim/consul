@@ -160,7 +160,7 @@ describe Budget::Investment do
     end
 
     it "returns false in any other phase" do
-      Budget::Phase::PHASE_KINDS.reject { |phase| phase == "selecting" }.each do |phase|
+      Budget::Phase::PHASE_KINDS.excluding("selecting").each do |phase|
         budget = create(:budget, phase: phase)
         investment = create(:budget_investment, budget: budget)
 
@@ -178,7 +178,7 @@ describe Budget::Investment do
     end
 
     it "returns false in any other phase" do
-      Budget::Phase::PHASE_KINDS.reject { |phase| phase == "valuating" }.each do |phase|
+      Budget::Phase::PHASE_KINDS.excluding("valuating").each do |phase|
         budget = create(:budget, phase: phase)
         investment = create(:budget_investment, budget: budget)
 
@@ -203,7 +203,7 @@ describe Budget::Investment do
     end
 
     it "returns false in any other phase" do
-      Budget::Phase::PHASE_KINDS.reject { |phase| phase == "balloting" }.each do |phase|
+      Budget::Phase::PHASE_KINDS.excluding("balloting").each do |phase|
         budget = create(:budget, phase: phase)
         investment = create(:budget_investment, :selected, budget: budget)
 
@@ -242,6 +242,12 @@ describe Budget::Investment do
 
     it "returns false if price is not present" do
       investment.price = nil
+
+      expect(investment.should_show_price?).to eq(false)
+    end
+
+    it "returns false if budget hide money is active" do
+      budget.update!(hide_money: true)
 
       expect(investment.should_show_price?).to eq(false)
     end
@@ -1192,7 +1198,7 @@ describe Budget::Investment do
       end
 
       it "returns false if budget is not balloting phase" do
-        Budget::Phase::PHASE_KINDS.reject { |phase| phase == "balloting" }.each do |phase|
+        Budget::Phase::PHASE_KINDS.excluding("balloting").each do |phase|
           budget.update!(phase: phase)
           investment = create(:budget_investment, heading: heading1)
 

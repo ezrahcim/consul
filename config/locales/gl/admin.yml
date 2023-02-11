@@ -4,11 +4,9 @@ gl:
       title: Administración
     actions:
       actions: Accións
-      confirm: Estás seguro?
       confirm_hide: Confirmar moderación
       delete: "Borrar"
       hide: Agochar
-      hide_author: Bloquear o autor
       restore: Volver mostrar
       mark_featured: Destacar
       unmark_featured: Quitar destacado
@@ -118,7 +116,6 @@ gl:
       index:
         new_button: "Engadir un grupo novo"
     budget_headings:
-      no_headings: "Aínda non hai partidas creadas. Cada usuario poderá votar nunha soa partida de cada grupo."
       create:
         notice: "Partida creada correctamente!"
       update:
@@ -193,7 +190,6 @@ gl:
           incompatible: Incompatible
           price: Custo
           author: Autoría
-        cannot_calculate_winners: O orzamento debe manterse na fase «Proxecto en votación», «Revisión de votacións» ou «Orzamento rematado» para poder calcular os proxectos gañadores
         see_results: "Ver resultados"
       show:
         assigned_admin: Administrador asignado
@@ -890,9 +886,6 @@ gl:
         no_questions: "Non hai preguntas asignadas a esta votación."
         questions_title: "Listaxe de preguntas"
         table_title: "Título"
-      flash:
-        question_added: "Pregunta engadida a esta votación"
-        error_on_question_added: "Non se puido asignar a pregunta"
     questions:
       index:
         title: "Preguntas"
@@ -938,12 +931,6 @@ gl:
     answers:
       new:
         title: Nova resposta
-      show:
-        title: Título
-        description: Descrición
-        images: Imaxes
-        images_list: Listaxe de imaxes
-        edit: Editar resposta
       edit:
         title: Editar resposta
       videos:

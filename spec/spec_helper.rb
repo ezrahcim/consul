@@ -3,12 +3,14 @@ require "email_spec"
 require "devise"
 require "knapsack_pro"
 
+Dir["./spec/factory_bot/**/*.rb"].sort.each { |f| require f }
 Dir["./spec/models/concerns/*.rb"].each { |f| require f }
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 Dir["./spec/shared/**/*.rb"].sort.each  { |f| require f }
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = true
+  config.fixture_path = "spec/fixtures/files"
 
   config.filter_run_when_matching :focus
   config.include RequestSpecHelper, type: :request
@@ -29,9 +31,14 @@ RSpec.configure do |config|
   end
 
   config.before do |example|
-    I18n.locale = :en
     Globalize.set_fallbacks_to_all_available_locales
     Setting["feature.user.skip_verification"] = nil
+  end
+
+  config.around do |example|
+    I18n.with_locale(:en) do
+      example.run
+    end
   end
 
   config.around(:each, :race_condition) do |example|
@@ -39,7 +46,7 @@ RSpec.configure do |config|
     example.run
     self.use_transactional_tests = true
 
-    DatabaseCleaner.clean_with(:truncation)
+    ActiveRecord::Tasks::DatabaseTasks.truncate_all
     Rails.application.load_seed
   end
 
@@ -109,6 +116,14 @@ RSpec.configure do |config|
 
   config.after(:each, :delay_jobs) do
     Delayed::Worker.delay_jobs = false
+  end
+
+  config.before(:each, :seed_tenants) do
+    Apartment.seed_after_create = true
+  end
+
+  config.after(:each, :seed_tenants) do
+    Apartment.seed_after_create = false
   end
 
   config.before(:each, :small_window) do

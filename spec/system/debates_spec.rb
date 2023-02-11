@@ -411,8 +411,8 @@ describe "Debates" do
 
     scenario "Debates are ordered by newest" do
       best_debate = create(:debate, title: "Best", created_at: Time.current)
-      medium_debate = create(:debate, title: "Medium", created_at: Time.current - 1.hour)
-      worst_debate = create(:debate, title: "Worst", created_at: Time.current - 1.day)
+      medium_debate = create(:debate, title: "Medium", created_at: 1.hour.ago)
+      worst_debate = create(:debate, title: "Worst", created_at: 1.day.ago)
 
       visit debates_path
       click_link "newest"
@@ -666,69 +666,6 @@ describe "Debates" do
 
     visit debate_path(debate)
     expect(page).to have_content("User deleted")
-  end
-
-  context "Filter" do
-    context "By geozone" do
-      let(:california) { Geozone.create(name: "California") }
-      let(:new_york)   { Geozone.create(name: "New York") }
-
-      before do
-        create(:debate, geozone: california, title: "Bigger sequoias")
-        create(:debate, geozone: california, title: "Green beach")
-        create(:debate, geozone: new_york, title: "Sully monument")
-      end
-
-      pending "From map" do
-        visit debates_path
-
-        click_link "map"
-        within("#html_map") do
-          url = find("area[title='California']")[:href]
-          visit url
-        end
-
-        within("#debates") do
-          expect(page).to have_css(".debate", count: 2)
-          expect(page).to have_content("Bigger sequoias")
-          expect(page).to have_content("Green beach")
-          expect(page).not_to have_content("Sully monument")
-        end
-      end
-
-      pending "From geozone list" do
-        visit debates_path
-
-        click_link "map"
-        within("#geozones") do
-          click_link "California"
-        end
-        within("#debates") do
-          expect(page).to have_css(".debate", count: 2)
-          expect(page).to have_content("Bigger sequoias")
-          expect(page).to have_content("Green beach")
-          expect(page).not_to have_content("Sully monument")
-        end
-      end
-
-      pending "From debate" do
-        debate = create(:debate, geozone: california, title: "Surf college")
-
-        visit debate_path(debate)
-
-        within("#geozone") do
-          click_link "California"
-        end
-
-        within("#debates") do
-          expect(page).to have_css(".debate", count: 3)
-          expect(page).to have_content("Surf college")
-          expect(page).to have_content("Bigger sequoias")
-          expect(page).to have_content("Green beach")
-          expect(page).not_to have_content("Sully monument")
-        end
-      end
-    end
   end
 
   context "Suggesting debates" do

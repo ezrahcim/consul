@@ -1,10 +1,14 @@
 Dir["./spec/support/common_actions/*.rb"].each { |f| require f }
+Dir["./spec/support/common_actions/custom/*.rb"].each { |f| require f }
 
 module CommonActions
   include Budgets
   include Comments
   include Debates
+  include Documents
   include Emails
+  include Images
+  include Maps
   include Notifications
   include Polls
   include Proposals
@@ -13,10 +17,13 @@ module CommonActions
   include Translations
   include Users
   include Verifications
-  include Votes
 
   def app_host
-    "#{Capybara.app_host}:#{Capybara::Server.ports.values.last}"
+    "#{Capybara.app_host}:#{app_port}"
+  end
+
+  def app_port
+    Capybara::Server.ports.values.last
   end
 
   def fill_in_signup_form(email = "manuela@consul.dev", password = "judgementday")

@@ -134,7 +134,7 @@
     margin-bottom: rem-calc(40);
 
     .debate-type {
-      @include brand-text;
+      @include brand-color;
       text-transform: uppercase;
       font-weight: 700;
       font-size: $small-font-size;
@@ -145,7 +145,7 @@
     }
 
     .debate-title a {
-      @include brand-text;
+      @include brand-color;
     }
   }
 
@@ -153,10 +153,6 @@
   .debate-meta a {
     font-size: $small-font-size;
     color: #6d6d6d;
-
-    .icon-comments {
-      margin-right: rem-calc(3);
-    }
   }
 
   .debate-info {
@@ -198,7 +194,7 @@
     }
 
     h4 a {
-      @include brand-text;
+      @include brand-color;
 
       &:hover {
         text-decoration: none;
@@ -215,7 +211,7 @@
     }
 
     .quiz-next {
-      @include brand-text;
+      @include brand-color;
       background: #ccdbe5;
       font-size: $small-font-size;
       font-weight: bold;
@@ -268,7 +264,7 @@
     }
 
     .control input:checked ~ .control-indicator {
-      background-color: $brand;
+      @include brand-background;
       border: 0;
     }
 
@@ -607,19 +603,9 @@
         }
 
         .comment-header {
-          color: #838383;
           padding-bottom: rem-calc(8);
           margin-bottom: rem-calc(16);
           border-bottom: 1px solid $border;
-
-          .comment-number {
-            color: $text;
-            display: inline-block;
-          }
-
-          .icon-comment {
-            margin-right: rem-calc(8);
-          }
 
           a .icon-expand {
             color: #838383;
@@ -630,21 +616,6 @@
 
         .comments-wrapper {
           position: relative;
-
-          .participation-not-allowed {
-            padding: rem-calc(20) rem-calc(8);
-          }
-        }
-
-        .comment-footer {
-          position: relative;
-
-          .participation-not-allowed {
-            font-size: rem-calc(14);
-            height: rem-calc(50);
-            padding: $line-height / 2;
-            top: -18px;
-          }
         }
 
         .comment-input {
@@ -746,22 +717,6 @@
                   content: "|";
                 }
               }
-
-              .icon-like,
-              .icon-unlike {
-                cursor: pointer;
-                color: #c7c7c7;
-
-                &:hover,
-                &:active,
-                &:focus {
-                  color: #838383;
-                }
-              }
-
-              .icon-like {
-                margin-right: rem-calc(4);
-              }
             }
           }
         }
@@ -837,13 +792,12 @@
   .comment {
     margin-bottom: rem-calc(48);
 
-    a {
+    .expand-context a {
       span {
         text-decoration: underline;
       }
 
-      .icon-expand,
-      .icon-comments {
+      .icon-expand {
         text-decoration: none;
         color: #999;
         line-height: 0;
@@ -851,10 +805,6 @@
 
       .icon-expand {
         margin-left: rem-calc(4);
-      }
-
-      .icon-comments {
-        margin-right: rem-calc(4);
       }
 
       &:active,
@@ -1004,10 +954,6 @@
     &:not(:last-child) {
       margin-bottom: $line-height / 2;
     }
-  }
-
-  .comments-count {
-    @include has-fa-icon(comments, regular);
   }
 
   .question-title:not(:only-child) {

@@ -11,12 +11,10 @@
 // 10. Official levels
 // 11. Tables
 // 12. Social
-// 13. Pages
 // 14. Verification
 // 15. Comments
 // 16. Flags
 // 17. Activity
-// 18. Banners
 // 19. Recommendations
 // 20. Documents
 // 21. Related content
@@ -97,17 +95,7 @@ p {
 }
 
 a {
-  color: $link;
-
-  &:hover,
-  &:active {
-    color: $link-hover;
-    text-decoration: underline;
-  }
-
-  &:focus {
-    color: $link-hover;
-  }
+  @include link;
 }
 
 a,
@@ -134,13 +122,6 @@ button,
 
 .button {
   @extend %button;
-  @include inverted-selection;
-  background: $brand;
-
-  &.warning,
-  &.warning:hover {
-    color: #000;
-  }
 
   &.medium {
     font-size: $small-font-size;
@@ -149,8 +130,15 @@ button,
 
 .button.hollow {
   @include normal-selection;
+  @include anchor-color;
   border: 1px solid;
-  color: $link;
+
+  &:hover,
+  &:focus {
+    $hover-color: scale-color($anchor-color, $lightness: $button-hollow-hover-lightness);
+    color: $hover-color;
+    color: var(--anchor-color-hover, $hover-color);
+  }
 }
 
 .button.hollow.error {
@@ -172,10 +160,6 @@ button,
 
 .inline-block {
   display: inline-block;
-}
-
-.aling-middle {
-  vertical-align: middle;
 }
 
 .sidebar-divider {
@@ -266,15 +250,11 @@ button,
     }
 
     a {
-      color: inherit;
+      @include text-colored-link;
       display: inline-block;
       font-weight: bold;
       position: relative;
       text-align: left;
-
-      &:hover {
-        color: $link;
-      }
     }
 
     + li {
@@ -282,7 +262,7 @@ button,
     }
 
     &.is-active {
-      @include brand-text;
+      @include brand-color;
       border-bottom: 2px solid;
       padding-bottom: rem-calc(1);
     }
@@ -309,7 +289,7 @@ button,
       padding: 0;
 
       &.is-active {
-        @include brand-text;
+        @include brand-color;
         font-weight: bold;
       }
     }
@@ -319,7 +299,7 @@ button,
     }
 
     &.is-active {
-      @include brand-text;
+      @include brand-color;
       border-bottom: 2px solid;
     }
   }
@@ -381,14 +361,14 @@ button,
     position: relative;
 
     &:hover {
-      @include brand-text;
+      @include brand-color;
       background: none;
       text-decoration: none;
     }
 
     &[aria-selected="true"],
     &.is-active {
-      @include brand-text;
+      @include brand-color;
       border-bottom: 0;
       font-weight: bold;
 
@@ -450,6 +430,10 @@ button,
 .help-text {
   line-height: rem-calc(20);
   margin-top: 0;
+
+  strong {
+    font-style: normal;
+  }
 }
 
 .menu-and-content {
@@ -537,7 +521,7 @@ body > header,
       padding: rem-calc(6);
 
       [type="submit"] {
-        @include brand-text;
+        @include brand-color;
         background: none;
         border: 0;
         cursor: pointer;
@@ -565,7 +549,7 @@ body > header,
   }
 
   .top-bar {
-    @extend %brand-background;
+    @include background-with-text-contrast($main-header, [main-header, brand]);
   }
 }
 
@@ -617,7 +601,7 @@ body > header,
       text-align: left;
 
       @include breakpoint(medium) {
-        @include brand-text;
+        @include brand-color;
         background: $body-background;
         text-align: center;
       }
@@ -645,8 +629,7 @@ body > header,
     }
 
     &.is-dropdown-submenu {
-      background: $body-background;
-      color: $text;
+      @extend %body-colors;
       margin: 0;
       margin-top: rem-calc(-12);
       padding: 0;
@@ -709,8 +692,7 @@ body > header,
 }
 
 .top-links {
-  background: $dark;
-  color: $white;
+  @include background-with-text-contrast($top-links, [top-links, brand-secondary]);
   display: flex;
   flex-wrap: wrap;
   font-size: $small-font-size;
@@ -754,8 +736,7 @@ body > header,
   flex-direction: column;
 
   @include breakpoint(medium) {
-    background: $body-background;
-    color: $text;
+    @include background-with-text-contrast($subnavigation, subnavigation);
     flex-direction: row;
     padding-bottom: 0;
 
@@ -791,22 +772,18 @@ body > header,
       width: auto;
 
       &:hover {
-        color: $link;
+        @include anchor-color;
+      }
+
+      &.is-active {
+        @include brand-color;
+        border-bottom: 2px solid;
+        margin-bottom: 1px;
       }
     }
 
     &:focus {
       z-index: 1;
-    }
-
-    &.is-active {
-      color: #fff;
-
-      @include breakpoint(medium) {
-        @include brand-text;
-        border-bottom: 2px solid;
-        margin-bottom: 1px;
-      }
     }
   }
 
@@ -827,10 +804,9 @@ body > header,
     padding-bottom: 0;
 
     button {
-      background: $border;
+      @include background-with-text-contrast($border);
       border: 1px solid #ccc;
       border-left: 0;
-      color: $text;
       height: $line-height * 1.5;
       line-height: $line-height * 1.5;
       padding-top: 0;
@@ -859,7 +835,7 @@ body > header,
   margin-bottom: $line-height / 2;
 
   a {
-    color: inherit;
+    @include text-colored-link;
     display: inline-block;
     font-weight: bold;
     margin-right: $line-height / 2;
@@ -869,14 +845,10 @@ body > header,
     @include breakpoint(medium) {
       margin-right: $line-height;
     }
-
-    &:hover {
-      color: $link;
-    }
   }
 
   .is-active {
-    @include brand-text;
+    @include brand-color;
     border-bottom: 2px solid;
 
     &:hover {
@@ -940,7 +912,7 @@ footer {
 }
 
 .footer {
-  background: #f1f1f1;
+  @include background-with-text-contrast($footer, footer);
   clear: both;
   margin-top: $line-height * 2;
   padding-bottom: $line-height;
@@ -969,8 +941,8 @@ footer {
 
 .categories a,
 .geozone a {
+  @include anchor-color;
   background: $highlight;
-  color: $link;
 
   &:hover,
   &.is-active {
@@ -979,7 +951,7 @@ footer {
 }
 
 .sidebar-title {
-  border-top: 2px solid $brand;
+  @include brand-border(top, 2px);
   display: inline-block;
   font-size: rem-calc(16);
   font-weight: bold;
@@ -999,10 +971,9 @@ footer {
 }
 
 .auth-image {
-  background: $brand image-url("auth_bg.jpg");
+  @include brand-background;
   background-repeat: no-repeat;
   background-size: cover;
-  color: $white;
 
   @include breakpoint(medium) {
     min-height: $line-height * 42;
@@ -1061,6 +1032,10 @@ form {
     font-size: $base-font-size;
     font-weight: bold;
     line-height: $line-height;
+  }
+
+  .checkbox-label {
+    display: table;
   }
 
   fieldset legend {
@@ -1195,10 +1170,6 @@ form {
     background-color: $info-bg;
     border-color: $info-border;
     color: $color-info;
-
-    a {
-      color: $link !important;
-    }
   }
 
   &.warning {
@@ -1257,10 +1228,6 @@ form {
     margin-right: $line-height / 2;
   }
 
-  .verify-account {
-    padding-right: $line-height / 2;
-  }
-
   .final-votes-info {
     background: $warning-bg;
     border: 1px solid $warning-border;
@@ -1297,40 +1264,6 @@ form {
   line-height: rem-calc(32);
   height: rem-calc(32);
   vertical-align: top;
-}
-
-.user-permissions {
-
-  p {
-    span {
-      color: $text-medium;
-      font-size: rem-calc(12);
-    }
-  }
-
-  ul {
-    list-style-type: none;
-    margin-bottom: 0;
-    margin-left: 0;
-  }
-
-  li {
-    font-size: $small-font-size;
-    margin-bottom: $line-height / 2;
-
-    span {
-      color: $text-medium;
-      font-size: rem-calc(12);
-    }
-
-    .icon-check {
-      color: $check;
-    }
-
-    .icon-x {
-      color: $delete;
-    }
-  }
 }
 
 .notifications-list {
@@ -1373,14 +1306,14 @@ form {
     }
   }
 
+  .notification-link {
+    @include text-colored-link;
+  }
+
   &:hover {
 
     a {
       text-decoration: none;
-    }
-
-    p:not(.time) {
-      color: $link;
     }
 
     &::before {
@@ -1389,8 +1322,8 @@ form {
   }
 
   &::before {
+    @include brand-color;
     background: $body-background;
-    color: $brand;
     content: "\4d";
     font-family: "icons" !important;
     font-size: $small-font-size;
@@ -1403,7 +1336,6 @@ form {
   }
 
   p {
-    color: $text;
     margin-bottom: 0;
     max-width: 80%;
   }
@@ -1501,7 +1433,7 @@ table {
 .button.button-facebook,
 .button.button-google,
 .button.button-wordpress {
-  color: $text;
+  color: inherit;
   font-weight: bold;
 
   &::before {
@@ -1625,51 +1557,6 @@ table {
   }
 }
 
-// 13. Pages
-// ---------
-
-.help {
-
-  li {
-    border-bottom: 1px solid $border;
-    font-weight: bold;
-    margin-left: rem-calc(-12);
-    position: relative;
-
-    span {
-      color: $text;
-      display: inline-block;
-      font-weight: normal;
-    }
-
-    &::after {
-      content: none;
-      color: $text-medium;
-      font-family: "icons" !important;
-      position: absolute;
-      right: 0;
-      top: 24px;
-
-      @include breakpoint(medium) {
-        content: "c";
-      }
-    }
-  }
-
-  a {
-    display: block;
-    padding: $line-height / 2;
-  }
-
-  a:hover {
-    background: $highlight;
-
-    span {
-      text-decoration: none;
-    }
-  }
-}
-
 // 14. Verification
 // ----------------
 
@@ -1739,15 +1626,6 @@ table {
     }
   }
 
-  .send-letter {
-    background: none;
-    color: $link;
-
-    &:hover {
-      color: $link-hover;
-    }
-  }
-
   .button + form {
     display: inline-block;
     margin-left: $line-height / 2;
@@ -1771,21 +1649,6 @@ table {
 
   .number {
     opacity: 0.5;
-  }
-}
-
-.verify-account {
-  padding-right: $line-height / 2;
-
-  .already-verified {
-    color: $check;
-    line-height: $line-height * 2;
-
-    .icon-check {
-      font-size: rem-calc(24);
-      line-height: rem-calc(45);
-      vertical-align: middle;
-    }
   }
 }
 
@@ -1825,8 +1688,6 @@ table {
 // ------------
 
 .comments {
-  background: $body-background;
-  background-repeat: repeat-x;
   padding-bottom: $line-height * 4;
 
   h2 {
@@ -1887,7 +1748,7 @@ table {
       display: inline-block;
     }
 
-    form {
+    .comment-form form {
       margin-top: $line-height / 2;
     }
   }
@@ -1924,11 +1785,9 @@ table {
 
   .delete-comment {
     @include has-fa-icon(trash-alt, regular);
-    color: $delete;
 
-    &:hover,
-    &:active {
-      color: $link-hover;
+    &:not(:hover):not(:active) {
+      color: $delete;
     }
 
     &::before {
@@ -1991,34 +1850,43 @@ table {
 }
 
 .comment-info {
-  color: $text-medium;
   display: inline-block;
   font-size: $small-font-size;
   line-height: rem-calc(32); // Same as avatar height
 
   .user-name {
-    color: $text;
     font-weight: bold;
   }
 }
 
 .comment-votes {
 
-  a {
+  button,
+  form {
     color: $text-light;
     display: inline-block;
-    vertical-align: top;
   }
 
-  a:hover {
-    color: $text-medium;
-    text-decoration: none;
+  button {
+    font-size: $base-font-size;
 
-    .icon-like {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .in-favor button {
+    @include has-fa-icon(thumbs-up, solid);
+
+    &:hover {
       color: $like;
     }
+  }
 
-    .icon-unlike {
+  .against button {
+    @include has-fa-icon(thumbs-down, solid);
+
+    &:hover {
       color: $unlike;
     }
   }
@@ -2113,33 +1981,6 @@ table {
       border-left: 1px solid #ececec;
       padding-left: $line-height;
     }
-  }
-}
-
-// 18. Banners
-// -----------
-
-.banner {
-  @include full-width-background;
-
-  .debates-list &::before,
-  .proposals-list &::before,
-  .admin &::before {
-    content: none;
-  }
-
-  a > * {
-    padding: 0 rem-calc(16);
-
-    &:empty {
-      display: none;
-    }
-  }
-
-  + .budget-header,
-  + .budgets-index > .budget-header,
-  + .jumbo {
-    margin-top: 0;
   }
 }
 
@@ -2427,8 +2268,7 @@ table {
 }
 
 .add-related-content {
-  color: $link;
-  cursor: pointer;
+  @include link;
   display: block;
   margin-bottom: $line-height;
 
@@ -2527,7 +2367,7 @@ table {
   }
 
   a {
-    color: $link;
+    @include link;
   }
 }
 
@@ -2550,7 +2390,7 @@ table {
     p {
 
       &.description {
-        color: $text;
+        color: $body-font-color;
         word-wrap: break-word;
       }
     }
@@ -2614,8 +2454,8 @@ table {
   h3 {
 
     &.title {
+      @include brand-border(top, 4px);
       display: inline-block;
-      border-top: 4px solid $brand;
       margin-bottom: 0;
       padding: $line-height / 2 0;
     }
@@ -2702,9 +2542,8 @@ table {
     }
 
     span {
-      background: $body-background;
+      @extend %body-colors;
       border-radius: rem-calc(4);
-      color: $text;
       display: inline-block;
       font-size: $small-font-size;
       font-weight: bold;

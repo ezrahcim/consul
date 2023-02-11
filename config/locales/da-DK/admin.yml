@@ -4,11 +4,9 @@ da:
       title: Administration
     actions:
       actions: Handlinger
-      confirm: Er du sikker?
       confirm_hide: Bekræft moderation
       delete: "Slet"
       hide: Skjul
-      hide_author: Skjul bruger
       restore: Gendan
       mark_featured: Fremhævet
       unmark_featured: Fjern fremhævning
@@ -130,7 +128,6 @@ da:
         edit: "Rediger gruppe"
         submit: "Gem gruppe"
     budget_headings:
-      no_headings: "Der er ingen overskrifter."
       create:
         notice: "Post oprettet!"
       update:
@@ -207,7 +204,6 @@ da:
           incompatible: Uforenelig
           price: Pris
           author: Oprettet af
-        cannot_calculate_winners: Budgettet skal enten være i "Afstemningsfasen", "Gennemgangsfasen" eller "Afslutningsfasen" for at kunne beregne, hvilke projekter, der har fået flest stemmer
         see_results: "Se resultat"
         milestone_tags_filter_all: "Alle proces tags"
       show:
@@ -506,7 +502,7 @@ da:
           status_planned: Planlagt
         subnav:
           info: Information
-          homepage: Startside
+          homepage: Opsummering
           draft_versions: Udarbejdelse
           questions: Debat
           proposals: Forslag
@@ -997,9 +993,6 @@ da:
         table_title: "Titel"
         edit_answers: Rediger svar
         see_proposal: "(Se forslag)"
-      flash:
-        question_added: "Spørgsmål til denne afstemning"
-        error_on_question_added: "Spørgsmålet kunne ikke stilles til denne afstemning"
       destroy:
         alert: "Denne handling vil slette undersøgelsen og dets associerede spørgsmål."
         success_notice: "Undersøgelsen blev slettet"
@@ -1048,12 +1041,6 @@ da:
     answers:
       new:
         title: Nyt svar
-      show:
-        title: Titel
-        description: Beskrivelse
-        images: Billeder
-        images_list: Billedliste
-        edit: Rediger svar
       edit:
         title: Rediger svar
       videos:

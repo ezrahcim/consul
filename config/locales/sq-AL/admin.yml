@@ -4,11 +4,9 @@ sq:
       title: Administrim
     actions:
       actions: Veprimet
-      confirm: A je i sigurt?
       confirm_hide: Konfirmo moderimin
       delete: "Fshi"
       hide: Fshih
-      hide_author: Fshih autorin
       restore: Kthej
       mark_featured: Karakteristika
       unmark_featured: Çaktivizo karakteristikat
@@ -165,7 +163,6 @@ sq:
           incompatible: I papajtueshëm
           price: Çmim
           author: Autor
-        cannot_calculate_winners: Buxheti duhet të qëndrojë në fazën "Projektet e votimit", "Rishikimi i fletëve të votimit" ose "Buxheti i përfunduar" me qëllim të llogaritjes së projekteve të fituesve
         see_results: "Shiko rezultatet"
       show:
         assigned_admin: Administrator i caktuar
@@ -813,9 +810,6 @@ sq:
         no_questions: "Nuk ka pyetje për këtë sondazh."
         questions_title: "Lista e pyetjeve"
         table_title: "Titull"
-      flash:
-        question_added: "Pyetje shtuar në këtë sondazh"
-        error_on_question_added: "Pyetja nuk mund të caktohet në këtë sondazh"
     questions:
       index:
         title: "Pyetjet"
@@ -859,12 +853,6 @@ sq:
     answers:
       new:
         title: Përgjigje e re
-      show:
-        title: Titull
-        description: Përshkrimi
-        images: Imazh
-        images_list: Lista e imazheve
-        edit: Ndrysho përgjigjet
       edit:
         title: Ndrysho përgjigjet
       videos:
