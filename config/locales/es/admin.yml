@@ -4,12 +4,13 @@ es:
       title: Administración
     actions:
       actions: Acciones
-      block_author: "Bloquear al autor"
+      confirm: '¿Estás seguro?'
       confirm_action: "¿Estás seguro? %{action} \"%{name}\""
       confirm_delete: "¿Estás seguro? Esta acción borrará \"%{name}\" y no se puede deshacer."
       confirm_hide: Confirmar moderación
       delete: Borrar
       hide: Ocultar
+      hide_author: Bloquear al autor
       label: "%{action} %{name}"
       restore: Volver a mostrar
       mark_featured: Destacar
@@ -38,8 +39,6 @@ es:
           sdg: ODS
       create:
         notice: "Banner creado correctamente"
-      destroy:
-        notice: "Banner eliminado correctamente"
       edit:
         editing: Editar el banner
         form:
@@ -115,7 +114,6 @@ es:
         delete: Eliminar presupuesto
         phase: Fase
         phases_caption: "Fases"
-        phases_table_help_text: "La configuración de estas fases se utiliza únicamente con fines informativos. Su función es definir la información de las fases que se muestra en la página pública del presupuesto participativo."
         duration: "Duración"
         enabled: Habilitada
         actions: Acciones
@@ -139,8 +137,6 @@ es:
         info:
           budget_settings: "Configuración genérica del presupuesto participativo"
           staff_settings: "Administradores y Evaluadores asigandos al presupuesto"
-        hide_money: "Ocultar dinero"
-        hide_money_help_text: "Si esta opción está marcada, todos los campos que muestran la cantidad de dinero se ocultarán durante todo el proceso."
       destroy:
         success_notice: Presupuesto eliminado correctamente
         unable_notice: No se puede eliminar un presupuesto con proyectos asociados
@@ -156,7 +152,7 @@ es:
         headings:
           multiple: "Las partidas sirven para dividir el dinero del presupuesto participativo. Aquí puedes ir añadiendo partidas para cada grupo y establecer la cantidad de dinero que se gastará en cada partida."
           single: "Las partidas sirven para dividir el dinero del presupuesto participativo. Como este presupuesto solo tendrá una partida aquí podrás establecer la cantidad de dinero que se gastará en este presupuesto participativo."
-        phases: "Los presupuestos participativos tienen distintas fases. Aquí puedes habilitar o deshabilitar fases y también personalizar cada una de las fases. La configuración de estas fases se utiliza únicamente con fines informativos y se mostrará en la página pública del presupuesto participativo."
+        phases: "Los presupuestos participativos tienen distintas fases. Aquí puedes habilitar o deshabilitar fases y también personalizar cada una de las fases."
       show:
         add_group: "Añadir grupo"
         add_heading: "Añadir partida"
@@ -215,11 +211,10 @@ es:
         title: "Partidas de %{budget} / %{group}"
     budget_phases:
       edit:
-        dates_help_text: "Solo con fines informativos"
         description_help_text: Este texto aparecerá en la cabecera cuando la fase esté activa
         duration: "Duración de la fase"
-        duration_description: "Estos campos se utilizan únicamente con fines informativos y <strong>no provocan una actualización automática de la fase activa.</strong> Para actualizarla, edita el presupuesto y selecciona la fase activa."
-        enabled_help_text: Esta fase será pública en el calendario de fases del presupuesto.
+        duration_description: "El período de tiempo que esta fase estará activa."
+        enabled_help_text: Esta fase será pública en el calendario de fases del presupuesto y estará activa para otros propósitos
         image_description: "Si se proporciona una imagen se mostrará junto a la descripción de esta fase."
         main_call_to_action: "Enlace de acción principal (opcional)"
         main_call_to_action_description: "Este enlace aparecerá en la cabecera de este presupuesto participativo cuando esta fase esté activa y permite al usuario ejecutar una acción específica como crear una nueva propuesta, votar las existentes, o leer más sobre el funcionamiento de los presupuestos participativos."
@@ -784,7 +779,6 @@ es:
       comments: "Comentarios"
       local_census_records: Gestionar censo local
       machine_learning: "IA / Machine learning"
-      multitenancy: Multientidad
     administrators:
       index:
         title: Administradores
@@ -1103,14 +1097,13 @@ es:
         table_title: "Título"
         edit_answers: Editar respuestas
         see_proposal: "(Ver propuesta)"
+      flash:
+        question_added: "Pregunta añadida a esta votación"
+        error_on_question_added: "No se pudo asignar la pregunta"
       destroy:
         alert: "Esta acción eliminará la votación y todas sus preguntas asociadas."
         success_notice: "Votación eliminada correctamente"
         unable_notice: "No se pueden eliminar votaciones con votos"
-      votation_type:
-        title: "Tipo de votación"
-        unique_description: "Solo se puede responder a la pregunta con una única respuesta."
-        multiple_description: "Permite elegir más de una respuesta. Se puede elegir el número máximo de respuestas."
     questions:
       index:
         title: "Preguntas de votaciones"
@@ -1127,13 +1120,9 @@ es:
         poll_not_assigned: "Votación no asignada"
       edit:
         title: "Editar pregunta ciudadana"
-      form:
-        poll_help: "Solo se pueden seleccionar votaciones que no hayan empezado"
       new:
         title: "Crear pregunta ciudadana para la votación %{poll}"
         title_proposal: "Crear pregunta ciudadana"
-      destroy:
-        notice: "Pregunta eliminada correctamente"
       answers:
         images:
           add_image: "Añadir imagen"
@@ -1157,17 +1146,17 @@ es:
           documents_list: Lista de documentos
           document_title: Título
           document_actions: Acciones
-      no_edit: "Una vez comenzada la votación no será posible crear, editar o eliminar preguntas, respuestas o cualquier contenido asociado a la votación."
     answers:
       new:
         title: Nueva respuesta
+      show:
+        title: Título
+        description: Descripción
+        images: Imágenes
+        images_list: Lista de imágenes
+        edit: Editar respuesta
       edit:
         title: Editar respuesta
-      destroy:
-        success_notice: "Respuesta eliminada correctamente"
-      images:
-        index:
-          title: Imágenes
       videos:
         index:
           title: Vídeos
@@ -1351,7 +1340,6 @@ es:
         label:
           booths: "Buscar urna por nombre"
           budget_investments: "Buscar proyectos por título, descripción o partida"
-          comments: "Buscar comentarios"
           debates: "Buscar debates por título o descripción"
           legislation_processes: "Buscar procesos por título o descripción"
           legislation_proposals: "Buscar propuestas por título o descripción"
@@ -1361,7 +1349,6 @@ es:
           poll_questions: "Buscar preguntas"
           polls: "Buscar votaciones por nombre o descripción"
           proposals: "Buscar propuestas por título, código, descripción o pregunta"
-          proposal_notifications: "Buscar notificaciones por título o descripción"
           users: "Buscar usuario por nombre o email"
         search: "Buscar"
       search_results: "Resultados de la búsqueda"
@@ -1628,25 +1615,6 @@ es:
             notice: "Tarjeta actualizada con éxito"
           destroy:
             notice: "Tarjeta eliminada con éxito"
-    tenants:
-      create:
-        notice: Entidad creada correctamente
-      form:
-        use_subdomain: "Utiliza un subdominio en el dominio %{domain} para acceder a esta entidad"
-        use_domain: "Utiliza un dominio distinto para acceder a esta entidad"
-      hide:
-        notice: Entidad deshabilitada correctamente
-      index:
-        create: Crear entidad
-        enable: "Habilitar entidad %{tenant}"
-        enabled: Habilitada
-      new:
-        admin_information: 'Al crear una entidad se copiará tu usuario actual <strong>"%{username}"</strong> con el email <strong>"%{email}"</strong> y tu actual contraseña en la base de datos de la nueva entidad y se te otorgarán permisos de administración en la nueva entidad automáticamente. Nótese que serán cuentas de usuarios que están en bases de datos completamente independientes por lo que si cambias la contraseña de tu usuario en una entidad, las cuentas que tengas en otras entidades permanecerán intactas.'
-        title: Nueva entidad
-      restore:
-        notice: Entidad habilitada correctamente
-      update:
-        notice: Entidad actualizada correctamente
     homepage:
       title: Homepage
       description: Los módulos activos aparecerán en la homepage en el mismo orden que aquí.

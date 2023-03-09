@@ -3,6 +3,7 @@ sr:
     comments:
       index:
         block_authors: Блокирај ауторе
+        confirm: Да ли сте сигурни?
         filter: Филтер
         filters:
           all: Све
@@ -23,6 +24,7 @@ sr:
     debates:
       index:
         block_authors: Блокирај ауторе
+        confirm: Да ли сте сигурни?
         filter: Филтер
         filters:
           all: Све
@@ -49,6 +51,7 @@ sr:
     proposals:
       index:
         block_authors: Блокирај ауторе
+        confirm: Да ли сте сигурни?
         filter: Филтер
         filters:
           all: Све
@@ -66,6 +69,7 @@ sr:
     budget_investments:
       index:
         block_authors: Блокирај ауторе
+        confirm: Да ли сте сигурни?
         filter: Филтер
         filters:
           all: Све
@@ -83,6 +87,7 @@ sr:
     proposal_notifications:
       index:
         block_authors: Блокирај ауторе
+        confirm: Да ли сте сигурни?
         filter: Филтер
         filters:
           all: Све
@@ -99,6 +104,7 @@ sr:
         title: Обавештења о предлозима
     users:
       index:
+        hidden: Блокирано
         hide: Блокирано
         search_placeholder: емаил или име корисника
         title: Блокирајте кориснике

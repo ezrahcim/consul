@@ -1,10 +1,9 @@
 sv:
   moderation:
-    actions:
-      confirm_action: "Är du säker? %{action}"
     comments:
       index:
         block_authors: Blockera användare
+        confirm: Är du säker?
         filter: Filtrera
         filters:
           all: Alla
@@ -25,6 +24,7 @@ sv:
     debates:
       index:
         block_authors: Blockera förslagslämnare
+        confirm: Är du säker?
         filter: Filtrera
         filters:
           all: Alla
@@ -51,6 +51,7 @@ sv:
     proposals:
       index:
         block_authors: Blockera förslagslämnare
+        confirm: Är du säker?
         filter: Filtrera
         filters:
           all: Alla
@@ -68,6 +69,7 @@ sv:
     budget_investments:
       index:
         block_authors: Blockera användare
+        confirm: Är du säker?
         filter: Filtrera
         filters:
           all: Alla
@@ -85,6 +87,7 @@ sv:
     proposal_notifications:
       index:
         block_authors: Blockera användare
+        confirm: Är du säker?
         filter: Filtrera
         filters:
           all: Alla
@@ -101,11 +104,8 @@ sv:
         title: Aviseringar om förslag
     users:
       index:
-        block: Blockera
-        confirm_block: "Är du säker? Det här kommer att dölja användaren \"%{name}\" och användarens hela innehåll."
-        confirm_hide: "Är du säker? Det här kommer att dölja användaren \"%{name}\" utan att dölja användarens innehåll."
+        hidden: Blockerad
         hide: Blockera
         search_placeholder: användares e-postadress eller namn
         title: Blockera användare
-      notice_block: Användaren har blockerats. Allt innehåll som har skapats av denna användare har dolts.
       notice_hide: Användaren blockerades. Användarens alla inlägg och kommentarer har dolts.

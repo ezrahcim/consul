@@ -4,6 +4,9 @@ val:
       comments:
         see_all: Vore totes
         see_complete: Vore complet
+        comments_count:
+          one: "%{count} comentari"
+          other: "%{count} Comentaris"
         replies_count:
           one: "%{count} resposta"
           other: "%{count} respostes"
@@ -15,6 +18,9 @@ val:
         title: Comentaris
         comments_about: Comentaris sobre
         see_in_context: Vore en context
+        comments_count:
+          one: "%{count} comentari"
+          other: "%{count} Comentaris"
       show:
         title: Comentari
       version_chooser:
@@ -48,6 +54,7 @@ val:
           winners: Seleccionades
       debate:
         empty_questions: No hi ha preguntes
+        participate: Realitza les teues aportacions al debat previ participant en els seguents temes
       index:
         filter: Filtre
         filters:
@@ -86,6 +93,10 @@ val:
         form:
           leave_comment: Deixa la teua resposta
       question:
+        comments:
+          zero: Sense comentaris
+          one: "%{count} comentari"
+          other: "%{count} Comentaris"
         debate: Debat
       show:
         answer_question: Publicar resposta
@@ -114,5 +125,9 @@ val:
       debate_phase: "Fase prèvia"
       proposals_phase: "Fase de propostes"
       allegations_phase: "Fase de comentaris"
+      comments:
+        zero: "Sense comentaris"
+        one: "%{count} comentari"
+        other: "%{count} Comentaris"
       top_comments:
         zero: "Sense comentaris"

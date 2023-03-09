@@ -4,6 +4,9 @@ en:
       comments:
         see_all: See all
         see_complete: See complete
+        comments_count:
+          one: "%{count} comment"
+          other: "%{count} comments"
         replies_count:
           one: "%{count} reply"
           other: "%{count} replies"
@@ -15,6 +18,9 @@ en:
         title: Comments
         comments_about: Comments about
         see_in_context: See in context
+        comments_count:
+          one: "%{count} comment"
+          other: "%{count} comments"
       show:
         title: Comment
       version_chooser:
@@ -48,6 +54,7 @@ en:
           winners: Selected
       debate:
         empty_questions: There aren't any questions
+        participate: Participate in the debate
       index:
         filter: Filter
         filters:
@@ -58,9 +65,9 @@ en:
         section_header:
           icon_alt: Collaborative legislation icon
           title: Collaborative legislation
-          help: Help with collaborative legislation
+          help: Help about collaborative legislation
         section_footer:
-          title: Help with collaborative legislation
+          title: Help about collaborative legislation
           description: Participate in the debates and processes prior to the approval of new regulations or strategies. Your opinion will be considered.
       phase_not_open:
         not_open: This phase is not open yet
@@ -86,6 +93,10 @@ en:
         form:
           leave_comment: Leave your answer
       question:
+        comments:
+          zero: No comments
+          one: "%{count} comment"
+          other: "%{count} comments"
         debate: Debate
       show:
         answer_question: Submit answer
@@ -124,6 +135,10 @@ en:
         zero: "No proposals"
         one: "%{count} proposal"
         other: "%{count} proposals"
+      comments:
+        zero: "No comments"
+        one: "%{count} comment"
+        other: "%{count} comments"
       download: "Download summary"
       top_comments:
         zero: "No comments"

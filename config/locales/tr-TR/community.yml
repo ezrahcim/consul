@@ -25,6 +25,10 @@ tr:
       topic:
         edit: Konuyu düzenle
         destroy: Konuyu sil
+        comments:
+          zero: Yorum yok
+          one: 1 yorum
+          other: "%{count} yorumlar"
       author: Fikir sahibi
       back: '%{community} %{proposal} ''a geri dön'
     topic:

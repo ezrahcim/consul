@@ -1,10 +1,9 @@
 de:
   moderation:
-    actions:
-      confirm_action: "Bist du sicher? %{action}"
     comments:
       index:
         block_authors: Autoren blockieren
+        confirm: Sind Sie sich sicher?
         filter: Filter
         filters:
           all: Alle
@@ -25,6 +24,7 @@ de:
     debates:
       index:
         block_authors: Autoren blockieren
+        confirm: Sind Sie sich sicher?
         filter: Filter
         filters:
           all: Alle
@@ -51,6 +51,7 @@ de:
     proposals:
       index:
         block_authors: Autoren blockieren
+        confirm: Sind Sie sich sicher?
         filter: Filter
         filters:
           all: Alle
@@ -68,6 +69,7 @@ de:
     budget_investments:
       index:
         block_authors: Autoren blockieren
+        confirm: Sind Sie sich sicher?
         filter: Filter
         filters:
           all: Alle
@@ -85,6 +87,7 @@ de:
     proposal_notifications:
       index:
         block_authors: Autoren blockieren
+        confirm: Sind Sie sich sicher?
         filter: Filter
         filters:
           all: Alle
@@ -101,11 +104,8 @@ de:
         title: Benachrichtigungen zu einem Vorschlag
     users:
       index:
-        block: Block
-        confirm_block: "Bist du sicher? Dies wir den User \"%{name}\" and all seine Inhalte ausblenden. "
-        confirm_hide: "Bist du sicher? Dies wir den User \"%{name}\" ausblenden, aber nicht seine Inhalte."
+        hidden: Blockiert
         hide: Block
         search_placeholder: E-Mail oder Benutzername
         title: Benutzer blockieren
-      notice_block: Der User wurde blockiert. Alle Inhalte dieses Users sind nun ausgeblendet.
       notice_hide: Benutzer gesperrt. Alle Diskussionen und Kommentare dieses Benutzers wurden ausgeblendet.

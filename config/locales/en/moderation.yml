@@ -1,10 +1,9 @@
 en:
   moderation:
-    actions:
-      confirm_action: "Are you sure? %{action}"
     comments:
       index:
         block_authors: Block authors
+        confirm: Are you sure?
         filter: Filter
         filters:
           all: All
@@ -25,6 +24,7 @@ en:
     debates:
       index:
         block_authors: Block authors
+        confirm: Are you sure?
         filter: Filter
         filters:
           all: All
@@ -51,6 +51,7 @@ en:
     proposals:
       index:
         block_authors: Block authors
+        confirm: Are you sure?
         filter: Filter
         filters:
           all: All
@@ -68,6 +69,7 @@ en:
     budget_investments:
       index:
         block_authors: Block authors
+        confirm: Are you sure?
         filter: Filter
         filters:
           all: All
@@ -85,6 +87,7 @@ en:
     proposal_notifications:
       index:
         block_authors: Block authors
+        confirm: Are you sure?
         filter: Filter
         filters:
           all: All
@@ -101,11 +104,8 @@ en:
         title: Proposal notifications
     users:
       index:
-        block: Block
-        confirm_block: "Are you sure? This will hide the user \"%{name}\" and all their contents."
-        confirm_hide: "Are you sure? This will hide the user \"%{name}\" without hiding their contents."
-        hide: Hide
+        hidden: Blocked
+        hide: Block
         search_placeholder: email or name of user
         title: Block users
-      notice_block: The user has been blocked. All contents authored by this user have been hidden.
-      notice_hide: The user has been hidden. Contents authored by this user are still available.
+      notice_hide: User blocked. All of this user's debates and comments have been hidden.

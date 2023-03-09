@@ -4,9 +4,11 @@ bs:
       title: Administracija
     actions:
       actions: Radnje
+      confirm: Jeste sigurni?
       confirm_hide: Potvrdi moderiranje
       delete: "Obriši"
       hide: Sakrij
+      hide_author: Sakrij ime autora
       restore: Vrati
       mark_featured: Označi
       unmark_featured: Ukloni oznaku
@@ -117,6 +119,7 @@ bs:
         edit: "Edituj grupu"
         submit: "Spasi grupu"
     budget_headings:
+      no_headings: "Nema poglavlja."
       create:
         notice: "Poglavlje uspješno kreirano!"
       update:
@@ -192,6 +195,7 @@ bs:
           incompatible: Nije kompatibilno
           price: Cijena
           author: Autor
+        cannot_calculate_winners: Kako bi se obračunale odabrane investicije, budžet mora biti u fazi "Glasanja za projekte", ili u fazi "Provjera glasačkih listića", ili u fazi "Budžet završen"
         see_results: "Vidi rezultate"
       show:
         assigned_admin: Dodijeljeni administrator
@@ -962,6 +966,9 @@ bs:
         table_title: "Naziv"
         edit_answers: Edituj odgovore
         see_proposal: "(Vidi prijedlog)"
+      flash:
+        question_added: "Pitanje dodato u ovoj glasačkoj anketi"
+        error_on_question_added: "Pitanje se ne može uvrstiti u ovu glasačku anketu"
       destroy:
         alert: "Ovom radnjom će se ukloniti glasačka anketa i sva povezana pitanja."
         success_notice: "Glasačka anketa uspješno obrisana"
@@ -1011,6 +1018,12 @@ bs:
     answers:
       new:
         title: Novi odgovor
+      show:
+        title: Naslov
+        description: Opis
+        images: Slike
+        images_list: Lista slika
+        edit: Edituj odgovor
       edit:
         title: Edituj odgovor
       videos:

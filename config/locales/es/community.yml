@@ -25,6 +25,10 @@ es:
       topic:
         edit: Editar tema
         destroy: Eliminar tema
+        comments:
+          zero: Sin comentarios
+          one: 1 Comentario
+          other: "%{count} Comentarios"
       author: Autor
       back: Volver a %{community} %{proposal}
     topic:

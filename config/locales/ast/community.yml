@@ -3,6 +3,10 @@ ast:
     show:
       sidebar:
         participate: Colabora en la elaboración de la normativa sobre
+      topic:
+        comments:
+          one: 1 Comentario
+          other: "%{count} comentarios"
       author: Autor
     topic:
       show:

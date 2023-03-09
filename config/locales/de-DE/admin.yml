@@ -4,10 +4,12 @@ de:
       title: Verwaltung
     actions:
       actions: Aktionen
+      confirm: Sind Sie sich sicher?
       confirm_delete: "Sind Sie sicher? Diese Aktion wird \"%{name}\" löschen und kann nicht rückgängig gemacht werden."
       confirm_hide: Moderation bestätigen
       delete: "Löschen"
       hide: Ausblenden
+      hide_author: Verfasser*in verbergen
       restore: Wiederherstellen
       mark_featured: Hervorgehoben
       unmark_featured: Markierung aufheben
@@ -66,7 +68,7 @@ de:
     budgets:
       actions:
         edit: "Bürgerhaushalt bearbeiten"
-        preview: "Vorschau Bürgerhaushalt"
+        preview: "Ansicht Budget"
       index:
         title: Bürgerhaushalte
         new_link: Neuen Bürgerhaushalt erstellen
@@ -159,6 +161,7 @@ de:
       index:
         new_button: "Neue Gruppe hinzufügen"
     budget_headings:
+      no_headings: "Keine Rubriken vorhanden."
       create:
         notice: "Rubrik erfolgreich erstellt!"
       update:
@@ -247,6 +250,7 @@ de:
           incompatible: Inkompatibel
           price: Preis
           author: Autor
+        cannot_calculate_winners: Das Budget muss in einer der Phasen "Finale Abstimmung", "Abstimmung beendet" oder "Ergebnisse" stehen, um Gewinnervorschläge berechnen zu können
         see_results: "Ergebnisse anzeigen"
         milestone_tags_filter_all: "Status aller Ausgabenvorschläge"
       show:
@@ -1054,6 +1058,9 @@ de:
         table_title: "Titel"
         edit_answers: Antworten bearbeiten
         see_proposal: "(Vorschlag anzeigen)"
+      flash:
+        question_added: "Die Frage wurde zu dieser Abstimmung hinzugefügt"
+        error_on_question_added: "Die Frage konnte dieser Abstimmung nicht zugeordnet werden"
       destroy:
         alert: "Diese Aktion entfernt die Umfrage und alle damit verbundenen Fragen."
         success_notice: "Umfrage erfolgreich gelöscht"
@@ -1103,6 +1110,12 @@ de:
     answers:
       new:
         title: Neue Antwort
+      show:
+        title: Titel
+        description: Beschreibung
+        images: Bilder
+        images_list: Liste der Bilder
+        edit: Antwort bearbeiten
       edit:
         title: Antwort bearbeiten
       videos:

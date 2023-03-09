@@ -3,6 +3,7 @@ id:
     comments:
       index:
         block_authors: Blokir penulis
+        confirm: Apakah anda yakin?
         filter: Penyaring
         filters:
           all: Semua
@@ -23,6 +24,7 @@ id:
     debates:
       index:
         block_authors: Blokir penulis
+        confirm: Apakah anda yakin?
         filter: Penyaring
         filters:
           all: Semua
@@ -49,6 +51,7 @@ id:
     proposals:
       index:
         block_authors: Blokir penulis
+        confirm: Apakah anda yakin?
         filter: Penyaring
         filters:
           all: Semua
@@ -66,6 +69,7 @@ id:
     budget_investments:
       index:
         block_authors: Blokir penulis
+        confirm: Apakah anda yakin?
         filter: Penyaring
         filters:
           all: Semua
@@ -83,6 +87,7 @@ id:
     proposal_notifications:
       index:
         block_authors: Blokir penulis
+        confirm: Apakah anda yakin?
         filter: Penyaring
         filters:
           all: Semua
@@ -99,6 +104,7 @@ id:
         title: Pemberitahuan proposal
     users:
       index:
+        hidden: Diblokir
         hide: Blokir
         search_placeholder: surel atau nama pengguna
         title: Blokir pengguna

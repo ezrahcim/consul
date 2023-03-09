@@ -273,6 +273,8 @@ nn:
           document_title: Tittel
           document_actions: Handlinger
     answers:
+      show:
+        title: Tittel
       videos:
         index:
           video_title: Tittel

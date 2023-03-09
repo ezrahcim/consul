@@ -3,6 +3,7 @@ eu:
     comments:
       index:
         block_authors: Egileak blokeatu
+        confirm: Ziur zaude?
         filter: Iragazkia
         filters:
           all: Guztiak
@@ -23,6 +24,7 @@ eu:
     debates:
       index:
         block_authors: Egileak blokeatu
+        confirm: Ziur zaude?
         filter: Iragazi
         filters:
           all: Guztiak
@@ -49,6 +51,7 @@ eu:
     proposals:
       index:
         block_authors: Egileak blokeatu
+        confirm: Ziur zaude?
         filter: Iragazkia
         filters:
           all: Guztiak
@@ -66,6 +69,7 @@ eu:
     budget_investments:
       index:
         block_authors: Egileak blokeatu
+        confirm: Ziur zaude?
         filter: Iragazkia
         filters:
           all: Guztiak
@@ -82,6 +86,7 @@ eu:
     proposal_notifications:
       index:
         block_authors: Sortzaileak blokeatu
+        confirm: Ziur zaude?
         filter: Iragazkia
         filters:
           all: Guztiak
@@ -98,6 +103,7 @@ eu:
         title: Proposamen jakinarazpenak
     users:
       index:
+        hidden: Blokeatuta
         hide: Blokeatu
         search_placeholder: erabiltzailea edo emaila
         title: Erabiltzaileak blokeatu

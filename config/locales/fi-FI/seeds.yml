@@ -18,3 +18,5 @@ fi:
       environment: Ympäristö
     budgets:
       currency: '€'
+      valuator_groups:
+        culture_and_sports: Kulttuuri & urheilu

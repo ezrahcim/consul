@@ -3,6 +3,7 @@ ast:
     comments:
       index:
         block_authors: Bloquear autores
+        confirm: '¿Tas seguru?'
         filter: Filtru
         filters:
           all: Toes
@@ -23,6 +24,7 @@ ast:
     debates:
       index:
         block_authors: Bloquear autores
+        confirm: '¿Tas seguru?'
         filter: Filtru
         filters:
           all: Toes
@@ -47,6 +49,7 @@ ast:
     proposals:
       index:
         block_authors: Bloquear autores
+        confirm: '¿Tas seguru?'
         filter: Filtru
         filters:
           all: Toes
@@ -64,6 +67,7 @@ ast:
     budget_investments:
       index:
         block_authors: Bloquear autores
+        confirm: '¿Tas seguru?'
         filter: Filtru
         filters:
           all: Toes
@@ -78,6 +82,7 @@ ast:
     proposal_notifications:
       index:
         block_authors: Bloquear autores
+        confirm: '¿Tas seguru?'
         filter: Filtru
         filters:
           all: Toes
@@ -92,6 +97,7 @@ ast:
         title: Notificaciones de propuestas
     users:
       index:
+        hidden: Bloquiáu
         hide: Bloquear
         search_placeholder: email o nombre de usuario
         title: Bloquear usuarios

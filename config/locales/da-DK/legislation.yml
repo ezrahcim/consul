@@ -4,6 +4,9 @@ da:
       comments:
         see_all: Se alle
         see_complete: Se færdige
+        comments_count:
+          one: "%{count} kommentar"
+          other: "%{count} kommentarer"
         replies_count:
           one: "%{count} svar"
           other: "%{count} svar"
@@ -15,6 +18,9 @@ da:
         title: Kommentarer
         comments_about: Kommentarer om
         see_in_context: Se i context
+        comments_count:
+          one: "%{count} kommentar"
+          other: "%{count} kommentarer"
       show:
         title: Kommentar
       version_chooser:
@@ -48,6 +54,7 @@ da:
           winners: Valgt
       debate:
         empty_questions: Der er ingen spørgsmål
+        participate: Deltage i debatten
       index:
         filter: Filtrere
         filters:
@@ -71,7 +78,7 @@ da:
         see_latest_comments_title: Kommenter processen
       shared:
         key_dates: Deltagelsesfaser
-        homepage: Opsummering
+        homepage: Startside
         debate_dates: Debat
         draft_publication_date: Udkast til publikation
         allegations_dates: Kommentarer
@@ -86,6 +93,10 @@ da:
         form:
           leave_comment: Svar
       question:
+        comments:
+          zero: Ingen kommentarer
+          one: "%{count} kommentar"
+          other: "%{count} kommentarer"
         debate: Debat
       show:
         answer_question: Afgiv svar
@@ -124,6 +135,10 @@ da:
         zero: "Ingen borgerforslag"
         one: "%{count} borgerforslag"
         other: "%{count} borgerforslag"
+      comments:
+        zero: "Ingen kommentarer"
+        one: "%{count} kommentar"
+        other: "%{count} kommentarer"
       download: "Hent opsummering"
       top_comments:
         zero: "Ingen kommentarer"

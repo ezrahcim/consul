@@ -3,6 +3,7 @@ gl:
     comments:
       index:
         block_authors: Bloquear autores
+        confirm: Queres continuar?
         filter: Filtro
         filters:
           all: Todo
@@ -23,6 +24,7 @@ gl:
     debates:
       index:
         block_authors: Bloquear autores/as
+        confirm: Queres continuar?
         filter: Filtro
         filters:
           all: Todo
@@ -49,6 +51,7 @@ gl:
     proposals:
       index:
         block_authors: Bloquear autores/as
+        confirm: Queres continuar?
         filter: Filtro
         filters:
           all: Todo
@@ -66,6 +69,7 @@ gl:
     budget_investments:
       index:
         block_authors: Bloquear autores/as
+        confirm: Queres continuar?
         filter: Filtro
         filters:
           all: Todo
@@ -83,6 +87,7 @@ gl:
     proposal_notifications:
       index:
         block_authors: Bloquear autores/as
+        confirm: Queres continuar?
         filter: Filtro
         filters:
           all: Todo
@@ -99,6 +104,7 @@ gl:
         title: Notificacións das propostas
     users:
       index:
+        hidden: Bloqueado
         hide: Bloquear
         search_placeholder: correo electrónico ou nome de usuario
         title: Bloquear usuarios

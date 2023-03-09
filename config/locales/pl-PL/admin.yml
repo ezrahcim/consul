@@ -4,9 +4,11 @@ pl:
       title: Administracja
     actions:
       actions: Akcje
+      confirm: Jesteś pewny/a?
       confirm_hide: Potwierdź moderację
       delete: "Usuń"
       hide: Ukryj
+      hide_author: Ukryj autora
       restore: Przywróć
       mark_featured: Opisany
       unmark_featured: Odznaczono funkcję
@@ -118,6 +120,7 @@ pl:
       index:
         new_button: "Dodaj nową grupę"
     budget_headings:
+      no_headings: "Nie ma nagłówków."
       create:
         notice: "Pomyślnie utworzono nagłówek!"
       update:
@@ -192,6 +195,7 @@ pl:
           incompatible: Niezgodne
           price: Koszt
           author: Autor
+        cannot_calculate_winners: Budżet musi pozostać w fazie "Projekty głosowania", "Przegląd głosów" lub "Gotowy budżet" w celu obliczenia zwycięzców projektów
         see_results: "Zobacz wyniki"
       show:
         assigned_admin: Przypisany administrator
@@ -904,6 +908,9 @@ pl:
         table_title: "Tytuł"
         edit_answers: Edytowanie odpowiedzi
         see_proposal: "(Zobacz wnioski)"
+      flash:
+        question_added: "Pytanie dodane do tego głosowania"
+        error_on_question_added: "Pytanie nie mogło zostać przypisane do tego głosowania"
     questions:
       index:
         title: "Pytania"
@@ -948,6 +955,12 @@ pl:
     answers:
       new:
         title: Nowa odpowiedź
+      show:
+        title: Tytuł
+        description: Opis
+        images: Obrazów
+        images_list: Lista obrazów
+        edit: Edytuj odpowiedź
       edit:
         title: Edytuj odpowiedź
       videos:

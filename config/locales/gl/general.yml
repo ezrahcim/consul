@@ -11,9 +11,14 @@ gl:
       save_changes_submit: Gardar cambios
       recommendations: Recomendacións
       title: A miña conta
+      user_permission_debates: Participar en debates
       user_permission_info: Coa túa conta xa podes...
+      user_permission_proposal: Crear novas propostas
+      user_permission_support_proposal: Apoiar propostas*
       user_permission_title: Participación
       user_permission_verify: Para poder realizar todas as accións, verifica a túa conta.
+      user_permission_verify_info: "* Só para persoas empadroadas."
+      user_permission_votes: Participar nas votacións finais*
       verified_account: Conta verificada
       verify_my_account: Verificar a miña conta
   application:
@@ -66,6 +71,10 @@ gl:
       form:
         submit_button: Comezar un debate
     debate:
+      comments:
+        zero: Sen comentarios
+        one: 1 comentario
+        other: "%{count} comentarios"
       votes:
         zero: Ningún voto
         one: 1 voto
@@ -98,6 +107,9 @@ gl:
         button: Buscar
         placeholder: Buscar debates...
         title: Procurar
+      search_results:
+        one: " contén o termo <strong>'%{search_term}'</strong>"
+        other: " contén o termo <strong>'%{search_term}'</strong>"
       start_debate: Comezar un debate
       title: Debates
       section_header:
@@ -121,6 +133,10 @@ gl:
       start_new: Comezar un debate
     show:
       author_deleted: Usuario/a borrado/a
+      comments:
+        zero: Ningún comentario
+        one: 1 comentario
+        other: "%{count} comentarios"
       comments_title: Comentarios
       edit_debate_link: Editar proposta
       flag: Este debate foi marcado como inapropiado por varias persoas usuarias.
@@ -186,6 +202,7 @@ gl:
       conditions: Condicións de uso
       consul: aplicación CONSUL
       consul_url: https://github.com/consul/consul
+      contact_us: Se precisas asistencia técnica
       copyright: CONSUL, %{year}
       description: Este portal usa a %{consul} que é %{open_source}. De Madrid, para o mundo enteiro.
       open_source: software libre
@@ -344,6 +361,7 @@ gl:
       select_order_long: "Estás vendo as propostas"
       start_proposal: Crea unha proposta
       title: Propostas cidadás
+      top: Top semanal
       top_link_proposals: Propostas máis apoiadas por categoría
       section_header:
         icon_alt: Icona das propostas
@@ -371,6 +389,10 @@ gl:
         edit: "Antes de que se publique, poderás modificar o texto como queiras."
         view_proposal: Agora non, ir á miña proposta
       already_supported: Xa apoiaches esta proposta, compártea!
+      comments:
+        zero: Ningún comentario
+        one: 1 comentario
+        other: "%{count} comentarios"
       support: Apoiar
       support_title: Apoiar esta proposta
       supports:
@@ -389,6 +411,10 @@ gl:
     show:
       author_deleted: Usuario/a borrado/a
       code: "Código da proposta:"
+      comments:
+        zero: Ningún comentario
+        one: 1 comentario
+        other: "%{count} comentarios"
       comments_tab: Comentarios
       dashboard_proposal_link: Panel de control
       flag: Esta proposta foi marcada como inapropiada por varios usuarios.
@@ -744,12 +770,15 @@ gl:
   votes:
     agree: Estou de acordo
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
+    comment_unauthenticated: Necesitas %{signin} ou %{signup} para poder votar.
     disagree: Non estou de acordo
     organizations: As organizacións non poden votar.
     supports: Apoios
     verified_only: As propostas de investimento só poden ser apoiadas por usuarios verificados, %{verify_account}.
     budget_investments:
+      not_logged_in: Debes %{signin} ou %{signup} para continuares.
       not_verified: Os proxectos de investimento só poden ser votados por usuarios con contas verificadas, polo que %{verify_account}.
+      organization: As organizacións non poden votar.
       unfeasible: Non se poden votar proxectos de investimento inviables
       not_voting_allowed: A fase de votación está pechada
       different_heading_assigned:
@@ -781,12 +810,22 @@ gl:
       budget_investments:
         title: Orzamentos recomendados
       slide: "Ver %{title}"
+    verification:
+      i_dont_have_an_account: Non teño conta, quero crear unha e verificala
+      i_have_an_account: Xa teño unha conta que quero verificar
+      question: Tes xa unha conta en %{org_name}?
+      title: Verificación de conta
     welcome:
       go_to_index: Agora non, ver propostas
       title: Comeza a participar
+      user_permission_debates: Participar en debates
       user_permission_info: Coa túa conta xa podes...
+      user_permission_proposal: Crear novas propostas
+      user_permission_support_proposal: Apoiar propostas*
       user_permission_verify: "Para poder realizar todas as accións, verifica a túa conta."
+      user_permission_verify_info: "* Só persoas usuarias empadroadas no municipio de Madrid."
       user_permission_verify_my_account: Verificar a miña conta
+      user_permission_votes: Participar nas votacións finais
   invisible_captcha:
     sentence_for_humans: "Se es humano, ignora este campo"
     timestamp_error_message: "Iso foi moi rápido. Reenvía o formulario."

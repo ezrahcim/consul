@@ -64,6 +64,11 @@ en:
       users: Users management
       user_invites: Send invitations
       select_user: Select user
+    permissions:
+      create_proposals: Create proposals
+      debates: Engage in debates
+      support_proposals: Support proposals
+      vote_proposals: Vote proposals
     print:
       proposals_info: Create your proposal on http://url.consul
       proposals_title: "Proposals:"

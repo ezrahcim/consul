@@ -3,6 +3,7 @@ da:
     comments:
       index:
         block_authors: Bloker bruger
+        confirm: Er du sikker?
         filter: Filter
         filters:
           all: Alle
@@ -23,6 +24,7 @@ da:
     debates:
       index:
         block_authors: Bloker forfattere
+        confirm: Er du sikker?
         filter: Filter
         filters:
           all: Alle
@@ -49,6 +51,7 @@ da:
     proposals:
       index:
         block_authors: Bloker forfattere
+        confirm: Er du sikker?
         filter: Filter
         filters:
           all: Alle
@@ -66,6 +69,7 @@ da:
     budget_investments:
       index:
         block_authors: Bloker forfattere
+        confirm: Er du sikker?
         filter: Filter
         filters:
           all: Alle
@@ -83,6 +87,7 @@ da:
     proposal_notifications:
       index:
         block_authors: Bloker forfattere
+        confirm: Er du sikker?
         filter: Filter
         filters:
           all: Alle
@@ -99,6 +104,7 @@ da:
         title: Notifikationer om forslag
     users:
       index:
+        hidden: Blokeret
         hide: Bloker
         search_placeholder: e-mail eller brugernavn
         title: Bloker brugere

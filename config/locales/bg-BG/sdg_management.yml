@@ -5,7 +5,7 @@ bg:
         create: "Създайте заглавка"
         title: "Заглавка"
     menu:
-      budget_investments: "Граждански бюджети"
+      budget_investments: "Бюджети с участие"
       debates: "Дискусии"
       polls: "Анкети"
       proposals: "Предложения"

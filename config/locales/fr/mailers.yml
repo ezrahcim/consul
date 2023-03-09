@@ -7,13 +7,15 @@ fr:
       new_comment_by: Il y a un nouveau commentaire de <strong>%{commenter}</strong>
       subject: Quelqu'un a commenté votre %{commentable}
       title: Nouveau commentaire
+    config:
+      manage_email_subscriptions: Pour ne plus recevoir ces courriels, changer vos options dans
     email_verification:
       click_here_to_verify: sur ce lien
       instructions_2: Ce courriel va vérifier votre compte avec <b>%{document_type}%{document_number}</b>. Si ce compte ne vous appartient pas, veuillez ne pas cliquer sur le lien et ignorer ce courriel.
       instructions: Procéder à la vérification de votre compte utilisateur, vous devez cliquer sur %{verification_link}.
       subject: Confirmer votre courriel
       thanks: Merci beaucoup.
-      title: "Confirmer votre compte en utilisant le lien suivant"
+      title: Confirmer votre compte en utilisant le lien suivant
     reply:
       hi: Bonjour
       new_reply_by: Il y a une nouvelle réponse de <strong>%{commenter}</strong> à votre commentaire sur
@@ -24,14 +26,17 @@ fr:
       title: "Notifications des propositions sur %{org_name}"
       share: Partager une proposition
       comment: Commenter une proposition
+      unsubscribe: "Si vous ne souhaitez pas recevoir les notifications des propositions, rendez-vous sur %{account} et décochez 'Recevoir un résumé des notifications de proposition'."
+      unsubscribe_account: Mon compte
       unfollow: "Accédez à cette proposition et désabonnez-vous pour ne plus recevoir de notifications."
     direct_message_for_receiver:
       subject: "Vous avez un nouveau message privé"
       reply: Répondre à %{sender}
+      unsubscribe: "Si vous ne souhaitez pas recevoir de messages directs, rendez-vous sur %{account} et décochez 'Recevoir des courriels à propos de messages directs'."
+      unsubscribe_account: Mon compte
     direct_message_for_sender:
       subject: "Vous avez envoyé un nouveau message privé"
-      title: "Vous avez envoyé un nouveau message privé"
-      text: "Vous avez envoyé un nouveau message privé à <strong>%{receiver}</strong> avec le contenu suivant :"
+      title: "Vous avez envoyé un nouveau message privé à <strong>%{receiver}</strong> avec le contenu suivant :"
     user_invite:
       ignore: "Si vous n'avez pas requis cette invitation, pas d'inquiétude, vous pouvez ignorer ce courriel."
       text: "Merci d'avoir demandé à rejoindre %{org}! Dans quelques secondes vous pourrez commencer à participer, remplissez simplement le formulaire ci-dessous :"
@@ -81,6 +86,30 @@ fr:
     machine_learning_success:
       link: "Visiter le panneau Machine Learning"
       title: "Script d'apprentissage automatique"
+    new_actions_notification_rake_created:
+      subject: "Plus de nouveautés à propos de votre propositions citoyenne"
+      hi: "Bonjour %{name},\n"
+      new_resource: "NOUVELLE RESSOURCE DEBLOQUÉE"
+      introduction: "Comme vous le savez, le %{created_at_day} %{created_at_month} vous avez crée une proposition en mode brouillon %{title}."
+      text_1: "Vous pouvez publier n'importe quand avec ce lien %{link_to_published}. Si vous n'êtes toujours pas sûrs..."
+      text_2: "Capturez ce moment! Apprenez, ajouter d'autres personnes avec les mêmes intêrets et préparez la diffusion dont vous aurez besoin avant de publier votre proposition définitivement."
+      text_3: "Et pour vous accompagner dans ce défi, voici les informations..."
+      text_4: "Jetez un coup d'oeil à ces NOUVELLES ACTIONS recommandées:"
+      text_5: "La prochaine action que nous vous recommandons est:"
+      footer_text: "Comme toujours, entrez dans le Panel de Propositions et nous vous expliquerons en détail comment utiliser ces ressources et comment en tirer un profit maximal."
+      dashboard_button: "Allez-y, découvrez les!"
+    new_actions_notification_rake_published:
+      subject: "Plus de nouveautés à propos de votre propositions citoyenne"
+      hi: "Bonjour %{name},"
+      new_resource: "NOUVELLE RESSOURCE DEBLOQUÉE"
+      introduction: "Comme vous le savez, le %{published_at_day} %{published_at_month} vous avez crée une proposition en mode brouillon %{title}."
+      text_1: "Vous avez reçu %{votes_count} supports jusqu'à maintenant Félicitations!"
+      text_2: "Par conséquent, vous avez accès à une nouvelle ressource pour vous aider à progresser."
+      text_3: "Il vous manque %{days_count} jours avant que votre proposition atteigne %{max_votes_count} support et puisse être soumise à un referundum. Courage et continuez à faire passer le mots. Êtes-vous à court d'idées?"
+      text_4: "NOUVELLE ACTION DE DIFFUSION RECOMMANDÉE"
+      text_5: "Et ce n'est pas tout, regardez l'action suivante:"
+      footer_text: "Comme toujours, entrez dans le Panel de Propositions et nous vous expliquerons en détail comment utiliser ces ressources et comment en tirer un profit maximal."
+      dashboard_button: "Allez-y, découvrez les!"
     new_actions_notification_on_create:
       subject: "Votre brouillon citoyen est crée"
       hi: "Salut %{name}!"

@@ -4,12 +4,13 @@ en:
       title: Administration
     actions:
       actions: Actions
-      block_author: "Block author"
+      confirm: Are you sure?
       confirm_action: "Are you sure? %{action} \"%{name}\""
       confirm_delete: "Are you sure? This action will delete \"%{name}\" and can't be undone."
       confirm_hide: Confirm moderation
       delete: "Delete"
       hide: Hide
+      hide_author: Hide author
       label: "%{action} %{name}"
       restore: Restore
       mark_featured: Featured
@@ -38,8 +39,6 @@ en:
           sdg: SDG
       create:
         notice: "Banner created successfully"
-      destroy:
-        notice: "Banner deleted successfully"
       edit:
         editing: Edit banner
         form:
@@ -115,7 +114,6 @@ en:
         delete: Delete budget
         phase: Phase
         phases_caption: "Phases"
-        phases_table_help_text: "The configuration of these phases is used for information purposes only. Its function is to define the phases information displayed on the public page of the participatory budget."
         duration: "Duration"
         enabled: Enabled
         actions: Actions
@@ -139,8 +137,6 @@ en:
         info:
           budget_settings: "General participatory budget settings"
           staff_settings: "Administrators and Valuators assigned to the budget"
-        hide_money: "Hide money"
-        hide_money_help_text: "If this option is checked, all fields showing the amount of money will be hidden throughout the process."
       destroy:
         success_notice: Budget deleted successfully
         unable_notice: You cannot delete a budget that has associated investments
@@ -156,7 +152,7 @@ en:
         headings:
           multiple: "Headings are meant to divide the money of the participatory budget. Here you can add headings for this group and assign the amount of money that will be used for each heading."
           single: "Headings are meant to divide the money of the participatory budget. Since this budget will only contain one heading, this is the place where you stablish the money that will be spent in this participaroty budget."
-        phases: "Participatory budgets have different phases. Here you can enable or disable phases and also customize each individual phase. The configuration of these phases is used for information purposes only and will be displayed on the public page of the participatory budget."
+        phases: "Participatory budgets have different phases. Here you can enable or disable phases and also customize each individual phase."
       show:
         add_group: "Add group"
         add_heading: "Add heading"
@@ -216,11 +212,10 @@ en:
     budget_phases:
       edit:
         title: "Edit phase"
-        dates_help_text: "For information purposes only"
         description_help_text: This text will appear in the header when the phase is active
         duration: "Phase's duration"
-        duration_description: "These fields are used for information purposes only and <strong>do not trigger an automatic update of the active phase.</strong> In order to update it, edit the budget and select the active phase."
-        enabled_help_text: This phase will be public in the budget's phases timeline.
+        duration_description: "The period of time this phase will be active."
+        enabled_help_text: This phase will be public in the budget's phases timeline, as well as active for any other purpose
         image_description: "If an image is uploaded it will be displayed next to the description of this phase."
         main_call_to_action: "Main call to action (optional)"
         main_call_to_action_description: "This link will appear on main banner of this participatory budget when this phase is enabled and encourages your user to perform a specific action like creating a proposal, voting for existing ones, or learn more about the process."
@@ -528,10 +523,10 @@ en:
         size: "Size"
         url: "URL"
       create:
-        success_notice: "Document uploaded successfully"
+        success_notice: "Document uploaded succesfully"
         unable_notice: "Invalid document"
       destroy:
-        success_notice: "Document deleted successfully"
+        success_notice: "Document deleted succesfully"
     hidden_users:
       index:
         filter: Filter
@@ -785,7 +780,6 @@ en:
       comments: "Comments"
       local_census_records: Manage local census
       machine_learning: "AI / Machine learning"
-      multitenancy: Multitenancy
     administrators:
       index:
         title: Administrators
@@ -810,7 +804,7 @@ en:
     segment_recipient:
       all_users: All users
       administrators: Administrators
-      all_proposal_authors: Proposal authors (including archived and withdrawn)
+      all_proposal_authors: Proposal authors (including archived and retired)
       proposal_authors: Proposal authors
       investment_authors: Investment authors in the current budget
       feasible_and_undecided_investment_authors: "Authors of some investment in the current budget that does not comply with: [valuation finished unfesasible]"
@@ -895,7 +889,7 @@ en:
         pending_to_be_sent: This is the content pending to be sent
         moderate_pending: Moderate notification send
         send_pending: Send pending
-        send_pending_notification: Pending notifications sent successfully
+        send_pending_notification: Pending notifications sent succesfully
       proposal_notification_digest:
         title: "Proposal notification digest"
         description: "Gathers all proposal notifications for an user in a single message, to avoid too much emails."
@@ -1104,14 +1098,13 @@ en:
         table_title: "Title"
         edit_answers: Edit answers
         see_proposal: "(See proposal)"
+      flash:
+        question_added: "Question added to this poll"
+        error_on_question_added: "Question could not be assigned to this poll"
       destroy:
         alert: "This action will remove the poll and all its associated questions."
         success_notice: "Poll deleted successfully"
         unable_notice: "You cannot delete a poll that has votes"
-      votation_type:
-        title: "Votation type"
-        unique_description: "It's only possible to answer one time to the question."
-        multiple_description: "Allows to choose multiple answers. It's possible to set the maximum number of answers."
     questions:
       index:
         title: "Questions"
@@ -1128,13 +1121,9 @@ en:
         poll_not_assigned: "Poll not assigned"
       edit:
         title: "Edit Question"
-      form:
-        poll_help: "You can only select polls that have not started yet"
       new:
         title: "Create question to poll %{poll}"
         title_proposal: "Create question"
-      destroy:
-        notice: "Question deleted successfully"
       answers:
         images:
           add_image: "Add image"
@@ -1158,17 +1147,17 @@ en:
           documents_list: Documents list
           document_title: Title
           document_actions: Actions
-      no_edit: "Once the poll has started it will not be possible to create, edit or delete questions, answers or any content associated with the poll."
     answers:
       new:
         title: New answer
+      show:
+        title: Title
+        description: Description
+        images: Images
+        images_list: Images list
+        edit: Edit answer
       edit:
         title: Edit answer
-      destroy:
-        success_notice: "Answer deleted successfully"
-      images:
-        index:
-          title: Images
       videos:
         index:
           title: Videos
@@ -1321,7 +1310,7 @@ en:
           title: Map configuration
           help: Here you can customize the way the map is displayed to users. Drag map marker or click anywhere over the map, set desired zoom and click button "Update".
           flash:
-            update: Map configuration updated successfully.
+            update: Map configuration updated succesfully.
           form:
             submit: Update
           how_to_enable: 'To show the map to users you must enable "Proposals and budget investments geolocation" on "Features" tab.'
@@ -1352,7 +1341,6 @@ en:
         label:
           booths: "Search booth by name or location"
           budget_investments: "Search investments by title, description or heading"
-          comments: "Search comments"
           debates: "Search debates by title or description"
           legislation_processes: "Search processes by title or description"
           legislation_proposals: "Search proposals by title or description"
@@ -1362,7 +1350,6 @@ en:
           poll_questions: "Search poll questions"
           polls: "Search polls by name or description"
           proposals: "Search proposals by title, code, description or question"
-          proposal_notifications: "Search notifications by title or description"
           users: "Search user by name or email"
         search: "Search"
       search_results: "Search results"
@@ -1629,25 +1616,6 @@ en:
             notice: "Card updated successfully"
           destroy:
             notice: "Card removed successfully"
-    tenants:
-      create:
-        notice: Tenant created successfully
-      form:
-        use_subdomain: "Use a subdomain in the %{domain} domain to access this tenant"
-        use_domain: "Use a different domain to access this tenant"
-      hide:
-        notice: Tenant disabled successfully
-      index:
-        create: Create tenant
-        enable: "Enable tenant %{tenant}"
-        enabled: Enabled
-      new:
-        admin_information: "When you create a tenant, your current user <strong>\"%{username}\"</strong> with the email <strong>\"%{email}\"</strong> and your password will be copied into the new tenant's database and will be automatically granted administration permissions. Note that these user accounts are stored in completely separate databases, so if you change the password of your user in one tenant, your accounts in other tenants will remain intact."
-        title: New tenant
-      restore:
-        notice: Tenant enabled successfully
-      update:
-        notice: Tenant updated successfully
     homepage:
       title: Homepage
       description: The active modules appear in the homepage in the same order as here.

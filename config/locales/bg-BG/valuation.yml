@@ -4,10 +4,10 @@ bg:
       title: Оценка
     menu:
       title: Оценка
-      budgets: Граждански бюджети
+      budgets: Бюджети с участие
     budgets:
       index:
-        title: Граждански бюджети
+        title: Бюджети с участие
         filters:
           current: Отворено
           finished: Приключено

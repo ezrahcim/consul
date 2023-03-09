@@ -3,6 +3,7 @@ hr:
     comments:
       index:
         block_authors: Blokirani autori
+        confirm: Jeste li sigurni?
         filter: Filter
         filters:
           all: Svi
@@ -23,6 +24,7 @@ hr:
     debates:
       index:
         block_authors: Blokiraj autore
+        confirm: Jeste li sigurni?
         filter: Filtriraj
         filters:
           all: Svi
@@ -49,6 +51,7 @@ hr:
     proposals:
       index:
         block_authors: Blokiraj autore
+        confirm: Jeste li sigurni?
         filter: Filter
         filters:
           all: Svi
@@ -66,6 +69,7 @@ hr:
     budget_investments:
       index:
         block_authors: Blok autora
+        confirm: Jeste li sigurni?
         filter: Filter
         filters:
           all: Svi
@@ -83,6 +87,7 @@ hr:
     proposal_notifications:
       index:
         block_authors: Blok autora
+        confirm: Jeste li sigurni?
         filter: Filter
         filters:
           all: Svi
@@ -99,6 +104,7 @@ hr:
         title: Obavijesti prijedloga
     users:
       index:
+        hidden: Blokirano
         hide: Blok
         search_placeholder: email ili ime korisnika
         title: Blokirani korisnici

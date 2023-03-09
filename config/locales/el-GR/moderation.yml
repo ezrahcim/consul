@@ -3,6 +3,7 @@ el:
     comments:
       index:
         block_authors: Απέκλεισε τους συγγραφείς
+        confirm: Είστε βέβαιοι;
         filter: Φίλτρο
         filters:
           all: Όλα
@@ -23,6 +24,7 @@ el:
     debates:
       index:
         block_authors: Απέκλεισε τους συγγραφείς
+        confirm: Είστε βέβαιοι;
         filter: Φίλτρο
         filters:
           all: Όλα
@@ -49,6 +51,7 @@ el:
     proposals:
       index:
         block_authors: Αποκλεισμός συγγραφέων
+        confirm: Είστε βέβαιοι;
         filter: Φίλτρο
         filters:
           all: Όλα
@@ -66,6 +69,7 @@ el:
     budget_investments:
       index:
         block_authors: Αποκλεισμός συγγραφέων
+        confirm: Είστε βέβαιοι;
         filter: Φίλτρο
         filters:
           all: Όλα
@@ -83,6 +87,7 @@ el:
     proposal_notifications:
       index:
         block_authors: Αποκλεισμός συγγραφέων
+        confirm: Είστε βέβαιοι;
         filter: Φίλτρο
         filters:
           all: Όλα
@@ -99,6 +104,7 @@ el:
         title: Ειδοποιήσεις προτάσεων
     users:
       index:
+        hidden: Αποκλεισμένο
         hide: Αποκλείω
         search_placeholder: email ή όνομα χρήστη
         title: Αποκλεισμός χρηστών

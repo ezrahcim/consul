@@ -25,6 +25,12 @@ he:
       topic:
         edit: ערוך נושא
         destroy: מחיקת הנושא
+        comments:
+          zero: אין תגובות
+          one: תגובה אחת
+          two: "%{count} תגובות"
+          many: "%{count} תגובות"
+          other: "%{count} תגובות"
       author: מחבר/ת
       back: חזרה ל- %{community} %{proposal}
     topic:

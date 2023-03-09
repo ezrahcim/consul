@@ -13,19 +13,19 @@ ro:
       activity:
         one: "activitate"
         few: "activități"
-        other: "activități"
+        other: "%{count} activități"
       budget:
         one: "Buget"
         few: "Bugete"
-        other: "Bugete"
+        other: "%{count} Bugete"
       budget/investment:
         one: "Investiție"
         few: "Investiții"
-        other: "Investiții"
+        other: "%{count} Investiții"
       milestone:
         one: "reper"
         few: "repere"
-        other: "repere"
+        other: "%{count} repere"
       milestone/status:
         one: "Status reper"
         few: "Stări reper"
@@ -45,7 +45,7 @@ ro:
       tag:
         one: "Etichetă"
         few: "Etichete"
-        other: "Etichete"
+        other: "%{count} Etichete"
       user:
         one: "Etichetă"
         few: "Etichete"
@@ -69,7 +69,7 @@ ro:
       manager:
         one: "Administrator"
         few: "Administratori"
-        other: "Administratori"
+        other: "%{count} administratori"
       newsletter:
         one: "Newsletter"
         few: "Newsletters"
@@ -77,7 +77,7 @@ ro:
       vote:
         one: "Vot"
         few: "Voturi"
-        other: "Voturi"
+        other: "%{count} voturi"
       organization:
         one: "Organizație"
         few: "Organizații"
@@ -129,7 +129,7 @@ ro:
       document:
         one: Document
         few: Documente
-        other: Documente
+        other: '%{count} documente'
       legislation/process:
         one: "Proces"
         few: "Procese"
@@ -137,7 +137,7 @@ ro:
       legislation/proposal:
         one: "Propunere"
         few: "Propuneri"
-        other: "Propuneri"
+        other: "%{count} propuneri"
       legislation/draft_versions:
         one: "Versiune schiță"
         few: "Versiuni schiță"
@@ -153,15 +153,15 @@ ro:
       legislation/answers:
         one: "Răspuns"
         few: "Răspunsuri"
-        other: "Răspunsuri"
+        other: "%{count} răspunsuri"
       documents:
         one: "Document"
         few: "Documente"
-        other: "Documente"
+        other: "%{count} documente"
       images:
         one: "Imagine"
         few: "Imagini"
-        other: "Imagini"
+        other: "%{count} imagini"
       topic:
         one: "Subiect"
         few: "Subiecte"
@@ -495,7 +495,7 @@ ro:
         description: Descriere
       poll/question/answer/translation:
         title: Răspuns
-        description: "Descriere"
+        description: Descriere
       poll/question/answer/video:
         title: Titlu
         url: Video extern

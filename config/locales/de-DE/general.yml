@@ -11,9 +11,14 @@ de:
       save_changes_submit: Änderungen speichern
       recommendations: Empfehlungen
       title: Mein Benutzerkonto
+      user_permission_debates: An Diskussion teilnehmen
       user_permission_info: Mit Ihrem Konto können Sie...
+      user_permission_proposal: Neuen Vorschlag erstellen
+      user_permission_support_proposal: Vorschläge unterstützen
       user_permission_title: Teilnahme
       user_permission_verify: Damit Sie alle Funktionen nutzen können, müssen Sie ihr Konto verifizieren.
+      user_permission_verify_info: "* Nur für in der Volkszählung registrierte Nutzer."
+      user_permission_votes: An finaler Abstimmung teilnehmen
       verified_account: Konto verifiziert
       verify_my_account: Mein Konto verifizieren
   application:
@@ -69,6 +74,10 @@ de:
       form:
         submit_button: Starten Sie eine Diskussion
     debate:
+      comments:
+        zero: Keine Kommentare
+        one: 1 Kommentar
+        other: "%{count} Kommentare"
       votes:
         zero: Keine Bewertung
         one: 1 Stimme
@@ -101,6 +110,9 @@ de:
         button: Suche
         placeholder: Suche Diskussionen...
         title: Suche
+      search_results:
+        one: " enthält den Begriff <strong>'%{search_term}'</strong>"
+        other: " enthält den Begriff <strong>'%{search_term}'</strong>"
       start_debate: Starten Sie eine Diskussion
       title: Diskussionen
       section_header:
@@ -124,6 +136,10 @@ de:
       start_new: Eine Diskussion starten
     show:
       author_deleted: Benutzer*in gelöscht
+      comments:
+        zero: Keine Kommentare
+        one: 1 Kommentar
+        other: "%{count} Kommentare"
       comments_title: Kommentare
       edit_debate_link: Bearbeiten
       flag: Diese Diskussion wurde von verschiedenen Benutzern als unangebracht gemeldet.
@@ -197,6 +213,7 @@ de:
       conditions: Allgemeine Nutzungsbedingungen
       consul: CONSUL Anwendung
       consul_url: https://github.com/consul/consul
+      contact_us: Für technische Unterstützung geben Sie ein
       copyright: CONSUL, %{year}
       description: Die Plattform basiert auf %{consul}, einer %{open_source}.
       open_source: Open-Source Software
@@ -360,6 +377,7 @@ de:
       select_order_long: "Sie sehen Vorschläge nach:"
       start_proposal: Vorschlag erstellen
       title: Vorschläge
+      top: Tops der Woche
       top_link_proposals: Die am meisten unterstützten Vorschläge nach Kategorie
       section_header:
         icon_alt: Vorschläge-Symbol
@@ -387,6 +405,10 @@ de:
         edit: "Bevor Sie ihren Text teilen, können Sie ihn beliebig bearbeiten. "
         view_proposal: Nicht jetzt. Gehe zu meinem Vorschlag
       already_supported: Sie haben diesen Vorschlag bereits unterstützt. Teilen Sie ihn!
+      comments:
+        zero: Keine Kommentare
+        one: 1 Kommentar
+        other: "%{count} Kommentare"
       support: Unterstützung
       support_title: Vorschlag unterstützen
       supports:
@@ -405,6 +427,10 @@ de:
     show:
       author_deleted: Benutzer*in gelöscht
       code: "Antrags-Code:"
+      comments:
+        zero: Keine Kommentare
+        one: 1 Kommentar
+        other: "%{count} Kommentare"
       comments_tab: Kommentare
       dashboard_proposal_link: Dashboard
       flag: Dieser Vorschlag wurde von verschiedenen Benutzern als unangebracht gemeldet.
@@ -820,12 +846,15 @@ de:
   votes:
     agree: Ich stimme zu
     anonymous: Zu viele anonyme Stimmen, um die Wahl anzuerkennen %{verify_account}.
+    comment_unauthenticated: Sie müssen sich %{signin} oder %{signup}, um abzustimmen.
     disagree: Ich stimme nicht zu
     organizations: Organisationen ist es nicht erlaubt abzustimmen
     supports: Unterstützer*innen
     verified_only: 'Nur verifizierte Benutzer können Vorschläge bewerten: %{verify_account}.'
     budget_investments:
+      not_logged_in: Sie müssen sich %{signin} oder %{signup}, um fortfahren zu können.
       not_verified: Nur verifizierte Benutzer können über ein Investitionsprojekt abstimmen; %{verify_account}.
+      organization: Organisationen ist es nicht erlaubt abzustimmen
       unfeasible: Undurchführbare Investitionsprojekte können nicht unterstützt werden
       not_voting_allowed: Die Abstimmungsphase ist beendet
       different_heading_assigned:
@@ -861,13 +890,23 @@ de:
       budget_investments:
         title: Empfohlene Investitionen
       slide: "%{title} anzeigen"
+    verification:
+      i_dont_have_an_account: Ich habe kein Konto
+      i_have_an_account: Ich habe bereits ein Konto
+      question: Haben Sie bereits in Konto bei %{org_name}?
+      title: Konto Verifizierung
     welcome:
       go_to_index: Vorschläge und Diskussionen anzeigen
       start_using_consul: Gehe zum Index
       title: Teilnehmen
+      user_permission_debates: An Diskussionen teilnehmen
       user_permission_info: Mit Ihrem Konto können Sie...
+      user_permission_proposal: Neue Vorschläge erstellen
+      user_permission_support_proposal: Vorschläge unterstützen*
       user_permission_verify: "Damit Sie alle Funktionen nutzen können, müssen Sie ihr Konto verifizieren."
+      user_permission_verify_info: "* Nur für Benutzer*innen im Melderegister."
       user_permission_verify_my_account: Mein Konto verifizieren
+      user_permission_votes: An finaler Abstimmung teilnehmen
   invisible_captcha:
     sentence_for_humans: "Wenn Sie ein Mensch sind, ignorieren Sie dieses Feld"
     timestamp_error_message: "Entschuldigung, das war zu schnell! Bitte erneut senden."

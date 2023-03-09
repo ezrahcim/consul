@@ -4,6 +4,9 @@ ast:
       comments:
         see_all: Ver todos
         see_complete: Ver completo
+        comments_count:
+          one: "%{count} comentario"
+          other: "%{count} comentarios"
         replies_count:
           one: "%{count} respuesta"
           other: "%{count} respuestas"
@@ -15,6 +18,9 @@ ast:
         title: Comentarios
         comments_about: Comentarios sobre
         see_in_context: Ver en contexto
+        comments_count:
+          one: "%{count} comentario"
+          other: "%{count} comentarios"
       show:
         title: Comentario
       version_chooser:
@@ -45,6 +51,7 @@ ast:
           winners: Escoyía
       debate:
         empty_questions: No hay preguntas
+        participate: Realiza tus aportaciones al debate previo participando en los siguientes temas.
       index:
         filter: Filtru
         filters:
@@ -75,6 +82,9 @@ ast:
         form:
           leave_comment: Deja tu respuesta
       question:
+        comments:
+          one: "%{count} comentario"
+          other: "%{count} comentarios"
         debate: Alderique
       show:
         answer_question: Enviar respuesta
@@ -100,3 +110,6 @@ ast:
       votes:
         zero: "%{count} votos"
       debate_phase: "Fase previa"
+      comments:
+        one: "%{count} comentario"
+        other: "%{count} comentarios"

@@ -3,6 +3,7 @@ so:
     comments:
       index:
         block_authors: Qorayaasha baaritaanka
+        confirm: Mahubtaa adigu?
         filter: Sifeeyee
         filters:
           all: Dhamaan
@@ -23,6 +24,7 @@ so:
     debates:
       index:
         block_authors: Qorayaasha baaritaanka
+        confirm: Mahubtaa adigu?
         filter: Sifeeyee
         filters:
           all: Dhamaan
@@ -49,6 +51,7 @@ so:
     proposals:
       index:
         block_authors: Qorayaasha baaritaanka
+        confirm: Mahubtaa adigu?
         filter: Sifeeyee
         filters:
           all: Dhamaan
@@ -66,6 +69,7 @@ so:
     budget_investments:
       index:
         block_authors: Qorayaasha baaritaanka
+        confirm: Mahubtaa adigu?
         filter: Sifeeyee
         filters:
           all: Dhamaan
@@ -83,6 +87,7 @@ so:
     proposal_notifications:
       index:
         block_authors: Qorayaasha baaritaanka
+        confirm: Mahubtaa adigu?
         filter: Sifeeyee
         filters:
           all: Dhamaan
@@ -99,6 +104,7 @@ so:
         title: Ogaysiis soo jedin
     users:
       index:
+        hidden: Xanibay
         hide: Xanibaan
         search_placeholder: emailka ama magaca isticamalaha
         title: Isticmalaysha la xayiray

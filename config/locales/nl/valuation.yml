@@ -53,7 +53,6 @@ nl:
         responsibles: Responsibles
         assigned_admin: Assigned admin
         assigned_valuators: Toegewezen beoordelaars
-        preview: Investeringsoverzicht
       edit:
         dossier: Dossier
         price: "Prijs (%{currency})"

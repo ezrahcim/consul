@@ -4,6 +4,9 @@ sv:
       comments:
         see_all: Visa alla
         see_complete: Visa förklaring
+        comments_count:
+          one: "%{count} kommentar"
+          other: "%{count} kommentarer"
         replies_count:
           one: "%{count} svar"
           other: "%{count} svar"
@@ -15,6 +18,9 @@ sv:
         title: Kommentarer
         comments_about: Kommentarer om
         see_in_context: Visa i sammanhang
+        comments_count:
+          one: "%{count} kommentar"
+          other: "%{count} kommentarer"
       show:
         title: Kommentar
       version_chooser:
@@ -48,6 +54,7 @@ sv:
           winners: Valt
       debate:
         empty_questions: Det finns inga frågor
+        participate: Delta i diskussionen
       index:
         filter: Filtrera
         filters:
@@ -86,6 +93,10 @@ sv:
         form:
           leave_comment: Svara
       question:
+        comments:
+          zero: Inga kommentarer
+          one: "%{count} kommentar"
+          other: "%{count} kommentarer"
         debate: Debatt
       show:
         answer_question: Skicka svar
@@ -124,6 +135,10 @@ sv:
         zero: "Inga förslag"
         one: "%{count} förslag"
         other: "%{count} förslag"
+      comments:
+        zero: "Inga kommentarer"
+        one: "%{count} kommentar"
+        other: "%{count} kommentarer"
       download: "Hämta sammanfattning"
       top_comments:
         zero: "Inga kommentarer"

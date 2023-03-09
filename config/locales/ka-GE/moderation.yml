@@ -3,6 +3,7 @@ ka:
     comments:
       index:
         block_authors: ავტორების დაბლოკვა
+        confirm: დარწმუნებული ხართ?
         filter: ფილტრი
         filters:
           all: ყველა
@@ -23,6 +24,7 @@ ka:
     debates:
       index:
         block_authors: ავტორების დაბლოკვა
+        confirm: დარწმუნებული ხართ?
         filter: ფილტრი
         filters:
           all: ყველა
@@ -49,6 +51,7 @@ ka:
     proposals:
       index:
         block_authors: ავტორების დაბლოკვა
+        confirm: დარწმუნებული ხართ?
         filter: ფილტრი
         filters:
           all: ყველა
@@ -66,6 +69,7 @@ ka:
     budget_investments:
       index:
         block_authors: ავტორების დაბლოკვა
+        confirm: დარწმუნებული ხართ?
         filter: ფილტრი
         filters:
           all: ყველა
@@ -83,6 +87,7 @@ ka:
     proposal_notifications:
       index:
         block_authors: ავტორების დაბლოკვა
+        confirm: დარწმუნებული ხართ?
         filter: ფილტრი
         filters:
           all: ყველა
@@ -99,6 +104,7 @@ ka:
         title: შეტყობინებები ინიციატივის თაობაზე
     users:
       index:
+        hidden: დაბლოკილი
         hide: დაბლოკვა
         search_placeholder: ელ. ფოსტა ან მომხმარებლის სახელი
         title: მომხმარებლების დაბლოკვა

@@ -3,6 +3,7 @@ ca:
     comments:
       index:
         block_authors: Bloquejar autors
+        confirm: '¿Estás segur?'
         filter: Filtrar
         filters:
           all: tots
@@ -23,6 +24,7 @@ ca:
     debates:
       index:
         block_authors: Bloquejar autors
+        confirm: '¿Estás segur?'
         filter: Filtrar
         filters:
           all: tots
@@ -49,6 +51,7 @@ ca:
     proposals:
       index:
         block_authors: Bloquejar autors
+        confirm: '¿Estás segur?'
         filter: Filtrar
         filters:
           all: tots
@@ -66,6 +69,7 @@ ca:
     budget_investments:
       index:
         block_authors: Bloquejar autors
+        confirm: '¿Estás segur?'
         filter: Filtrar
         filters:
           all: tots
@@ -83,6 +87,7 @@ ca:
     proposal_notifications:
       index:
         block_authors: Bloquejar autors
+        confirm: '¿Estás segur?'
         filter: Filtrar
         filters:
           all: tots
@@ -99,6 +104,7 @@ ca:
         title: Notificacions de propostes
     users:
       index:
+        hidden: Bloquejat
         hide: Bloquejar
         search_placeholder: email o nom d'usuari
         title: Bloquejar usuaris

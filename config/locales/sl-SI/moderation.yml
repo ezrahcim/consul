@@ -3,6 +3,7 @@ sl:
     comments:
       index:
         block_authors: Blokiraj avtorje
+        confirm: Si prepričan/-a?
         filter: Filtriraj
         filters:
           all: Vsi
@@ -23,6 +24,7 @@ sl:
     debates:
       index:
         block_authors: Blokiraj avtorje
+        confirm: Si prepričan/-a?
         filter: Filtriraj
         filters:
           all: Vsi
@@ -48,6 +50,7 @@ sl:
     proposals:
       index:
         block_authors: Blokiraj avtorje
+        confirm: Si prepričan/-a?
         filter: Filtriraj
         filters:
           all: Vsi
@@ -65,6 +68,7 @@ sl:
     budget_investments:
       index:
         block_authors: Blokiraj avtorje
+        confirm: Si prepričan?
         filter: Filtriraj
         filters:
           all: Vsi
@@ -81,6 +85,7 @@ sl:
     proposal_notifications:
       index:
         block_authors: Blokiraj avtorje
+        confirm: Si prepričan?
         filter: Filtriraj
         filters:
           all: Vsi
@@ -95,6 +100,7 @@ sl:
         title: Obvestila predlogov
     users:
       index:
+        hidden: Blokirani
         hide: Blokiraj
         search_placeholder: e-naslov ali ime uporabnika/-ce
         title: Blokiraj uporabnike/-ce

@@ -3,6 +3,7 @@ oc:
     comments:
       index:
         block_authors: Bloquejar d'autors
+        confirm: '¿Estás segur?'
         filter: Filtrar
         filters:
           all: totes
@@ -23,6 +24,7 @@ oc:
     debates:
       index:
         block_authors: Bloquejar d'autors
+        confirm: '¿Estás segur?'
         filter: Filtrar
         filters:
           all: totes
@@ -49,6 +51,7 @@ oc:
     proposals:
       index:
         block_authors: Bloquejar d'autors
+        confirm: '¿Estás segur?'
         filter: Filtrar
         filters:
           all: totes
@@ -66,6 +69,7 @@ oc:
     budget_investments:
       index:
         block_authors: Bloquejar d'autors
+        confirm: '¿Estás segur?'
         filter: Filtrar
         filters:
           all: totes
@@ -83,6 +87,7 @@ oc:
     proposal_notifications:
       index:
         block_authors: Bloquejar d'autors
+        confirm: '¿Estás segur?'
         filter: Filtrar
         filters:
           all: totes
@@ -99,6 +104,7 @@ oc:
         title: de Notificacions de proposicions
     users:
       index:
+        hidden: Bloquejat
         hide: Bloquejar
         search_placeholder: email o nom d'usatgièr
         title: Bloquejar d'usatgièrs

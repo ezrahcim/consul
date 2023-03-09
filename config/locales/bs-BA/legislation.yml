@@ -35,6 +35,8 @@ bs:
         proposals_dates: Prijedlozi
     questions:
       question:
+        comments:
+          zero: Nema komentara
         debate: Debata
       show:
         share: Podijeli
@@ -52,5 +54,7 @@ bs:
       debate_phase: "Debatna faza"
       proposals_phase: "Faza za podnošenje prijedloga"
       allegations_phase: "Faza za podnošenje komentara"
+      comments:
+        zero: "Nema komentara"
       top_comments:
         zero: "Nema komentara"

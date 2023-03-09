@@ -3,7 +3,10 @@ el:
     annotations:
       comments:
         see_all: Εμφάνιση όλων
-        see_complete: Εμφάνιση
+        see_complete: Εμφάνιση 
+        comments_count:
+          one: "%{count} σχόλιο"
+          other: "%{count} σχόλια"
         replies_count:
           one: "%{count} απάντηση"
           other: "%{count} απαντήσεις"
@@ -15,6 +18,9 @@ el:
         title: Σχόλια
         comments_about: Σχόλια σχετικά με
         see_in_context: Προβολή στο πλαίσιο
+        comments_count:
+          one: "%{count} σχόλιο"
+          other: "%{count} σχόλια"
       show:
         title: Σχόλιο
       version_chooser:
@@ -48,6 +54,7 @@ el:
           winners: Επιλεγμένο
       debate:
         empty_questions: Δεν υπάρχουν ερωτήσεις
+        participate: Συμμετοχή στη συζήτηση
       index:
         filter: Φίλτρο
         filters:
@@ -86,6 +93,10 @@ el:
         form:
           leave_comment: Απάντηση
       question:
+        comments:
+          zero: Δεν υπάρχουν σχόλια
+          one: "%{count} σχόλιο"
+          other: "%{count} σχόλια"
         debate: Συζήτηση
       show:
         answer_question: Υποβολή απάντησης
@@ -122,5 +133,9 @@ el:
         zero: "Δεν υπάρχουν προτάσεις"
         one: "%{count} πρόταση"
         other: "%{count} πρότάσεις"
+      comments:
+        zero: "Δεν υπάρχουν σχόλια"
+        one: "%{count} σχόλιο"
+        other: "%{count} σχόλια"
       top_comments:
         zero: "Δεν υπάρχουν σχόλια"

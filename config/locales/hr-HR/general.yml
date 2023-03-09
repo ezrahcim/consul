@@ -11,9 +11,14 @@ hr:
       save_changes_submit: Spremi promjene
       recommendations: Preporuke
       title: Moj račun
+      user_permission_debates: Sudjelovati u raspravama
       user_permission_info: Sa svojim računom možete...
+      user_permission_proposal: Izrađivati nove prijedloge
+      user_permission_support_proposal: Podupirati prijedloge
       user_permission_title: Sudjelovanje
       user_permission_verify: Kako biste izvodili ove aktivnosti, potvrdite svoj račun.
+      user_permission_verify_info: "* Samo za korisnike Cenzusa."
+      user_permission_votes: Sudjelovati u završnom glasanju
       verified_account: Račun provjeren
       verify_my_account: Potvrdi moj račun
   application:
@@ -70,6 +75,11 @@ hr:
       form:
         submit_button: Započnite raspravu
     debate:
+      comments:
+        zero: Nema komentara
+        one: 1 komentar
+        few: "%{count} komentara"
+        other: "%{count} komentara"
       votes:
         zero: Nema glasova
         one: 1 glas
@@ -103,6 +113,10 @@ hr:
         button: Pretraga
         placeholder: Pretraži rasprave...
         title: Pretraga
+      search_results:
+        one: " sadrži termin <strong>%{search_term}</strong>"
+        few: " sadrži termine <strong>%{search_term}</strong>"
+        other: " sadrži termine <strong>%{search_term}</strong>"
       start_debate: Započnite raspravu
       title: Rasprave
       section_header:
@@ -126,6 +140,11 @@ hr:
       start_new: Započnite raspravu
     show:
       author_deleted: Korisnik obrisan
+      comments:
+        zero: Nema komentara
+        one: 1 komentar
+        few: "%{count} komentare"
+        other: "%{count} komentare"
       comments_title: Kometari
       edit_debate_link: Uredi
       flag: Rasprava je označena kao neprimjerena od strane više korisnika.
@@ -199,6 +218,7 @@ hr:
       conditions: Odredbe i uvjeti korištenja
       consul: CONSUL aplikacija
       consul_url: https://github.com/consul/consul
+      contact_us: Za tehničku podršku posjetite
       copyright: CONSUL, %{year}
       description: Ovaj portal koristi %{consul} koji je %{open_source}.
       open_source: open-source softver
@@ -366,6 +386,7 @@ hr:
       select_order_long: "Vršite pregled prijedloga po:"
       start_proposal: Izradi prijedlog
       title: Prijedlozi
+      top: Tjedno najpopularniji
       top_link_proposals: Prijedlozi koji imaju naviše potpore po kategoriji
       section_header:
         icon_alt: Ikona prijedloga
@@ -393,6 +414,11 @@ hr:
         edit: "Prije nego što podjelite možete izmijeniti tekst koji vam se sviđa."
         view_proposal: Ne sad, idite na moj prijedlog
       already_supported: Vi ste već poduprli ovaj prijedlog. Podijelite ga!
+      comments:
+        zero: Bez komentara
+        one: 1 komentar
+        few: "%{count} komentare"
+        other: "%{count} komentare"
       support: Potpora
       support_title: Podupri ovaj prijedlog
       supports:
@@ -413,6 +439,11 @@ hr:
     show:
       author_deleted: Korisnik obrisan
       code: "Kod prijedloga:"
+      comments:
+        zero: Bez komentara
+        one: 1 komentar
+        few: "%{count} komentare"
+        other: "%{count} komentare"
       comments_tab: Komentari
       dashboard_proposal_link: Kontrolna ploča
       flag: Prijedlog je označen kao neprimjerena od strane više korisnika.
@@ -837,12 +868,15 @@ hr:
   votes:
     agree: Slažem se
     anonymous: Previše anonimnih glasova kako bi se prihvatio glas %{verify_account}.
+    comment_unauthenticated: '%{signin} ili %{signup} da biste glasali.'
     disagree: Ne slažem se
     organizations: Organizacijama nije dopušteno glasanje
     supports: Potpore
     verified_only: Samo potvrđenim korisnicima je dozvoljeno glasanje za prijedloge; %{verify_account}.
     budget_investments:
+      not_logged_in: '%{signin} ili %{signup} da biste nastavili.'
       not_verified: Samo potvrđeni korisnici mogu glasati za investicijske projekte, %{verify_account}.
+      organization: Organizacijama nije dopušteno glasanje
       unfeasible: Projekti koji nisu izvedivi ne mogu dobiti podršku
       not_voting_allowed: Faza glasanja je zatvorena
       different_heading_assigned:
@@ -875,13 +909,23 @@ hr:
       budget_investments:
         title: Preporučene investicije
       slide: "Vidi %{title}"
+    verification:
+      i_dont_have_an_account: Nemam račun
+      i_have_an_account: Već imam račun
+      question: Imate li račun u %{org_name}?
+      title: Potvrđivanje računa
     welcome:
       go_to_index: Ne sada, idite na indeksnu stranicu
       start_using_consul: Idi na indeksnu stranicu
       title: Sudjelovati
+      user_permission_debates: Sudjelovati u raspravama
       user_permission_info: Sa svojim računom možete...
+      user_permission_proposal: Izrađivati nove prijedloge
+      user_permission_support_proposal: Podupirati prijedloge*
       user_permission_verify: "Kako biste izveli sljedeće radnje potvrdite svoj račun."
+      user_permission_verify_info: "*Samo za korisnike Cenzusa."
       user_permission_verify_my_account: Potvrdi moj račun
+      user_permission_votes: Sudjelovati u završnom glasanju
   invisible_captcha:
     sentence_for_humans: "Ako ste fizička osoba, ignorirajte ovo polje"
     timestamp_error_message: "Žao nam je, ovo je bilo prebrzo! Molimo vas ponovno podnesite."
