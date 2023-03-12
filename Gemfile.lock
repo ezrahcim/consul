@@ -702,6 +702,7 @@ DEPENDENCIES
   audited (~> 5.0.2)
   autoprefixer-rails (~> 8.2.0)
   bullet (~> 7.0.3)
+  bundler (~> 2.1.4)
   byebug (~> 11.1.3)
   cancancan (~> 3.4.0)
   capistrano (~> 3.17.1)
