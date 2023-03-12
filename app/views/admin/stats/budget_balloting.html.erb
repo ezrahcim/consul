@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%= back_link_to budgets_admin_stats_path %>
 
 <h2><%= @budget.name %> - <%= t("admin.stats.budget_balloting.title") %></h2>
@@ -55,3 +56,6 @@
     </tr>
   <% end %>
 </table>
+=======
+<%= render Admin::Stats::BudgetBallotingComponent.new(@budget) %>
+>>>>>>> 33c62ccbd7c08c99604903bc8f983f3e706ed21d

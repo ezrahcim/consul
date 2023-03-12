@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <header>
   <% if display_remote_translation_info?(@remote_translations, I18n.locale) %>
     <%= render "shared/remote_translations_button", remote_translations: @remote_translations %>
@@ -46,3 +47,42 @@
     <%= yield :header_addon %>
   </div>
 </header>
+=======
+<header>
+  <%= render Layout::RemoteTranslationsButtonComponent.new(@remote_translations) %>
+
+  <div class="top-links">
+    <%= render Layout::LocaleSwitcherComponent.new %>
+    <div class="hide-for-small-only">
+      <%= render Layout::TopLinksComponent.new %>
+    </div>
+  </div>
+
+  <div class="top-bar">
+    <h1>
+      <%= link_to root_path, accesskey: "0" do %>
+        <%= image_tag(image_path_for("logo_header.png"), alt: setting["org_name"]) %>
+      <% end %>
+    </h1>
+
+    <%= render Layout::ResponsiveMenuComponent.new do %>
+      <%= render Layout::AccountMenuComponent.new(current_user) %>
+
+      <div class="show-for-small-only">
+        <div class="subnavigation subnavigation-with-top-links">
+          <%= render Layout::SubnavigationComponent.new %>
+          <%= render Layout::TopLinksComponent.new %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div id="navigation_bar" class="subnavigation">
+    <div class="hide-for-small-only">
+      <%= render Layout::SubnavigationComponent.new %>
+    </div>
+
+    <%= yield :header_addon %>
+  </div>
+</header>
+>>>>>>> 33c62ccbd7c08c99604903bc8f983f3e706ed21d
