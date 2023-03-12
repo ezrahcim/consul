@@ -38,3 +38,5 @@ tmp/
 # Test results
 /spec/examples.txt
 /coverage/
+key
+key.pub
