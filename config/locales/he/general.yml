@@ -675,6 +675,8 @@ he:
     show:
       back: "חזרה לפעילות שלי"
   shared:
+    optional: "אופציונלי"
+    required: "נדרש"
     edit: "ערוך"
     filter: "Filter"
     save: "שמירה"
@@ -765,6 +767,7 @@ he:
     translations:
       remove_language: הסרת שפה
       add_language: הוספת שפה
+      languages_in_use : שפות שבשימוש
   social:
     facebook: "%{org} פייסבוק"
     twitter: "%{org} טוויטר"
